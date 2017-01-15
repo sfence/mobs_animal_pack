@@ -117,12 +117,15 @@ if mobs.mod and mobs.mod == "redo" then
 	else
 		l_spawn_elevation_min = -5
 	end
-	--name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-	mobs:spawn_specific("mobs_wolf:wolf",
-		{"default:dirt_with_grass", "default:dirt","default:snow", "default:snowblock", "ethereal:green_dirt_top"},
-		{"air"},
-		-1, 20, 30, 10000, 2, l_spawn_elevation_min, 31000
-	)
+	mobs:spawn({
+		name = "mobs_wolf:wolf",
+		nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
+		min_light = 10,
+		chance = 15000,
+		min_height = l_spawn_elevation_min,
+		max_height = 31000,
+		day_toggle = true,
+	})
 	mobs:register_egg("mobs_wolf:wolf", "Wolf", "wool_grey.png", 1)
 
 -- Dog

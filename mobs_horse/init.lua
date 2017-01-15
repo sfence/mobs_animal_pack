@@ -154,13 +154,15 @@ if mobs.mod and mobs.mod == "redo" then
 	else
 		l_spawn_elevation_min = -10
 	end
-	--name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-	mobs:spawn_specific(
-		"mobs_horse:horse",
-		{"default:dirt_with_grass", "ethereal:green_dirt_top"},
-		{"air"},
-		8, 20, 30, 11000, 1, l_spawn_elevation_min, 31000
-	)
+	mobs:spawn({
+		name = "mobs_horse:horse",
+		nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
+		min_light = 10,
+		chance = 15000,
+		min_height = l_spawn_elevation_min,
+		max_height = 31000,
+		day_toggle = true,
+	})
 	mobs:register_egg("mobs_horse:horse", "Horse", "mobs_horse_inv.png", 0)
 
 	-- saddle

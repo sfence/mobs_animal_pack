@@ -112,12 +112,15 @@ if mobs.mod and mobs.mod == "redo" then
 	else
 		l_spawn_elevation_min = 1
 	end
-	--name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-	mobs:spawn_specific("mobs_giraffe:jeraf",
-		{"default:sand", "default:desert_sand"},
-		{"air"},
-		8, 20, 30, 20000, 1, l_spawn_elevation_min, 31000
-	)
+	mobs:spawn({
+		name = "mobs_giraffe:jeraf",
+		nodes = {"default:sand", "default:desert_sand"},
+		min_light = 10,
+		chance = 15000,
+		min_height = l_spawn_elevation_min,
+		max_height = 31000,
+		day_toggle = true,
+	})
 	mobs:register_egg("mobs_giraffe:jeraf", "Giraffe", "wool_yellow.png", 1)
 
 end
