@@ -71,7 +71,7 @@ if mobs.mod and mobs.mod == "redo" then
 		knock_back = 1,
 		lava_damage = 10,
 		fall_damage = 5,
-		--water_damage = 0,
+		water_damage = 1,
 		--light_damage = 0,
 		--recovery_time = 0.5,
 		--immune_to = {},
