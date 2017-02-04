@@ -130,7 +130,7 @@ if mobs.mod and mobs.mod == "redo" then
 
 -- Dog
 	mobs:register_mob("mobs_wolf:dog", {
-		type = "npc",
+		type = "animal",
 		--lifetimer = 180,
 
 		visual = "mesh",

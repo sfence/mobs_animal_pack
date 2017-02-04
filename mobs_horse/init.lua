@@ -3,7 +3,7 @@ if mobs.mod and mobs.mod == "redo" then
 
 -- horse
 	mobs:register_mob("mobs_horse:horse", {
-		type = "npc",
+		type = "animal",
 		--lifetimer = 180,
 
 		visual = "mesh",
