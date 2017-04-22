@@ -29,9 +29,9 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {{"mobs_medved.png"}},
 
 		--stepheight = 0.6,
-		fear_height = 4,
+		fear_height = 2,
 		runaway = false,
-		jump = false,
+		jump = true,
 		--jump_chance = 0,
 		jump_height = 4,
 		fly = false,
@@ -157,9 +157,9 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {{"mobs_medved.png"}},
 
 		--stepheight = 0.6,
-		fear_height = 4,
+		fear_height = 2,
 		runaway = false,
-		jump = false,
+		jump = true,
 		--jump_chance = 0,
 		jump_height = 4,
 		fly = false,

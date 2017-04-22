@@ -29,10 +29,8 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {},
 
 		stepheight = 1.1,
-		fear_height = 4,
-		--jump = true,
-		jump_chance = 5,
-		jump_height = 8,
+		fear_height = 2,
+		jump = true,
 		fly = false,
 		--fly_in = "air",
 		walk_chance = 75,
