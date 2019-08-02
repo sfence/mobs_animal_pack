@@ -3,7 +3,7 @@ if mobs.mod and mobs.mod == "redo" then
 
 -- horse
 	mobs:register_mob("mobs_horse:horse", {
-		type = "npc",
+		type = "animal",
 		--lifetimer = 180,
 
 		visual = "mesh",
@@ -31,9 +31,9 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {},
 
 		--stepheight = 0.6,
-		fear_height = 3,
+		fear_height = 2,
 		runaway = true,
-		--jump = true,
+		jump = true,
 		--jump_chance = 0,
 		--jump_height = 6,
 		fly = false,
@@ -154,13 +154,15 @@ if mobs.mod and mobs.mod == "redo" then
 	else
 		l_spawn_elevation_min = -10
 	end
-	--name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-	mobs:spawn_specific(
-		"mobs_horse:horse",
-		{"default:dirt_with_grass", "ethereal:green_dirt_top"},
-		{"air"},
-		8, 20, 30, 11000, 1, l_spawn_elevation_min, 31000
-	)
+	mobs:spawn({
+		name = "mobs_horse:horse",
+		nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
+		min_light = 10,
+		chance = 15000,
+		min_height = l_spawn_elevation_min,
+		max_height = 31000,
+		day_toggle = true,
+	})
 	mobs:register_egg("mobs_horse:horse", "Horse", "mobs_horse_inv.png", 0)
 
 	-- saddle

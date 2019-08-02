@@ -29,9 +29,9 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {{"mobs_medved.png"}},
 
 		--stepheight = 0.6,
-		fear_height = 4,
+		fear_height = 2,
 		runaway = false,
-		jump = false,
+		jump = true,
 		--jump_chance = 0,
 		jump_height = 4,
 		fly = false,
@@ -117,17 +117,20 @@ if mobs.mod and mobs.mod == "redo" then
 	else
 		l_spawn_elevation_min = -5
 	end
-	--name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-	mobs:spawn_specific("mobs_wolf:wolf",
-		{"default:dirt_with_grass", "default:dirt","default:snow", "default:snowblock", "ethereal:green_dirt_top"},
-		{"air"},
-		-1, 20, 30, 10000, 2, l_spawn_elevation_min, 31000
-	)
+	mobs:spawn({
+		name = "mobs_wolf:wolf",
+		nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
+		min_light = 10,
+		chance = 15000,
+		min_height = l_spawn_elevation_min,
+		max_height = 31000,
+		day_toggle = true,
+	})
 	mobs:register_egg("mobs_wolf:wolf", "Wolf", "wool_grey.png", 1)
 
 -- Dog
 	mobs:register_mob("mobs_wolf:dog", {
-		type = "npc",
+		type = "animal",
 		--lifetimer = 180,
 
 		visual = "mesh",
@@ -154,9 +157,9 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {{"mobs_medved.png"}},
 
 		--stepheight = 0.6,
-		fear_height = 4,
+		fear_height = 2,
 		runaway = false,
-		jump = false,
+		jump = true,
 		--jump_chance = 0,
 		jump_height = 4,
 		fly = false,
@@ -192,7 +195,7 @@ if mobs.mod and mobs.mod == "redo" then
 		knock_back = 2,
 		lava_damage = 5,
 		fall_damage = 5,
-		--water_damage = 0,
+		water_damage = 1,
 		--light_damage = 0,
 		--recovery_time = 0.5,
 		--immune_to = {},

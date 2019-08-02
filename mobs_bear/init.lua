@@ -3,7 +3,7 @@ if mobs.mod and mobs.mod == "redo" then
 
 -- bear
 	mobs:register_mob("mobs_bear:medved", {
-		type = "npc",
+		type = "animal",
 		--lifetimer = 180,
 
 		visual = "mesh",
@@ -30,11 +30,9 @@ if mobs.mod and mobs.mod == "redo" then
 		--child_texture = {{"mobs_medved.png"}},
 
 		--stepheight = 0.6,
-		fear_height = 4,
+		fear_height = 2,
 		runaway = false,
-		jump = false,
-		--jump_chance = 0,
-		jump_height = 4,
+		jump = true,
 		fly = false,
 		--fly_in = "air",
 		walk_chance = 75,
@@ -71,7 +69,7 @@ if mobs.mod and mobs.mod == "redo" then
 		knock_back = 1,
 		lava_damage = 10,
 		fall_damage = 5,
-		--water_damage = 0,
+		water_damage = 1,
 		--light_damage = 0,
 		--recovery_time = 0.5,
 		--immune_to = {},
@@ -136,13 +134,15 @@ if mobs.mod and mobs.mod == "redo" then
 	else
 		l_spawn_elevation_min = -10
 	end
-	--name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-	mobs:spawn_specific(
-		"mobs_bear:medved",
-		{"default:dirt_with_grass", "ethereal:green_dirt_top"},
-		{"air"},
-		0, 20, 30, 30000, 1, l_spawn_elevation_min, 31000
-	)
+	mobs:spawn({
+		name = "mobs_bear:medved",
+		nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
+		min_light = 10,
+		chance = 15000,
+		min_height = l_spawn_elevation_min,
+		max_height = 31000,
+		day_toggle = true,
+	})
 	mobs:register_egg("mobs_bear:medved", "Bear", "wool_brown.png", 1)
 
 end
