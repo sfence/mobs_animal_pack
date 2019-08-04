@@ -21,7 +21,7 @@ local l_anims = {
 	walk_start = 1,		walk_end = 95,
 	run_start = 1,		run_end = 95
 }
-local l_gull_model			= "animal_gull.b3d"
+local l_gull_model			= "mobs_birds_gull.b3d"
 local l_thrush_model		= "mobs_birds_thrush.b3d"
 local l_egg_texture			= "default_cloud.png"
 local l_capture_chance_h	= 5
