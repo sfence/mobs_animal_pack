@@ -1,17 +1,10 @@
-if not mobs.mod == "redo" then
-	return
-end
+if not mobs.mod == "redo" then return end
 
--- mr.goat
 mobs:register_mob("mobs_mr_goat:goat", {
 	type = "animal",
-	--lifetimer = 180,
-
 	visual = "mesh",
 	visual_size = {x=2,y=2},
 	mesh = "mobs_goat.b3d",
-	--gotten_mesh = "",
-	--rotate = 0,
 	collisionbox = {-0.3, -0.01, -0.3, 0.3, 0.75, 0.3},
 	animation = {
 		-- 1-30 head down, 31-60 head up, 61-121 tail wiggle, 185-215 lay down,
@@ -21,51 +14,24 @@ mobs:register_mob("mobs_mr_goat:goat", {
 		walk_start = 122,		walk_end = 182,
 		run_start = 122,		run_end = 182,
 		punch_start = 246,		punch_end = 330,
-		--punch2_start = 70,	punch2_end = 100,
-		--shoot_start = 0,	shoot_end = 0,
-		--speed_punch = 0,	speed_punch2 = 0,	speed_shoot = 0
 	},
 	textures = {
 		{"mobs_goat_white.png"},
 		{"mobs_goat_brown.png"},
 		{"mobs_goat_grey.png"},
 	},
-	--gotten_texture = {},
-	--child_texture = {},
-
-	--stepheight = 0.6,
 	fear_height = 2,
 	jump = true,
 	fly = false,
-	--fly_in = "air",
 	walk_chance = 60,
-	--walk_velocity = 1,
-	--run_velocity = 2,
-	--fall_speed = -10,
-	--floats = 1,
-
 	view_range = 7,
-	follow = {
-		"farming:straw"
-	},
 
 	passive = true,
 	attack_type = "dogfight",
 	damage = 3,
 	reach = 2,
-	--docile_by_day = false,
-	--attacks_monsters = false,
 	pathfinding = false,
 	runaway = false,
-	--double_melee_attack = false,
-	--group_attack = false,
-	--explosion_radius = 1,
-	--arrow = "ent:name",
-	--shoot_interval = 1,
-	--shoot_offset = 0,
-	--dogshoot_switch = 1,
-	--dogshoot_count_max = 5,
-
 	hp_min = 6,
 	hp_max = 12,
 	armor = 200,
@@ -73,12 +39,7 @@ mobs:register_mob("mobs_mr_goat:goat", {
 	lava_damage = 7,
 	fall_damage = 7,
 	water_damage = 1,
-	--light_damage = 0,
 	recovery_time = 0.25,
-	--immune_to = {},
-	--blood_amount = 5,
-	--blood_texture = "mobs_blood.png",
-
 	makes_footstep_sound = true,
 	sounds = {
 		random = "mobs_sheep",
@@ -92,40 +53,32 @@ mobs:register_mob("mobs_mr_goat:goat", {
 	replace_what = {"default:grass_3", "default:grass_4", "default:grass_5",},
 	replace_with = "air",
 	replace_rate = 50,
-	--replace_offset = 0,
-
-	--do_custom = function(self, dtime)
-		--end
-	--custom_attack = function(self, to_attack)
-		--end,
-	--on_blast = funtion(object, damage)
-			--return do_damage, do_knockback, drops
-		--end,
-	--on_die = function(self, pos)
-		--end,
+	follow = {
+		"farming:straw"
+	},
 	on_rightclick = function(self, clicker)
-			if  mobs:feed_tame(self, clicker, 8, true, true) then
+		if mobs:feed_tame(self, clicker, 8, true, true) then return end
+		if mobs:protect(self, clicker) then return end
+		if mobs:capture_mob(self, clicker, 0, 0, 60, false, nil) then return end
+
+		local tool = clicker:get_wielded_item()
+		if tool:get_name() == "bucket:bucket_empty" then
+			if self.gotten == true or self.child == true then
 				return
 			end
-			local tool = clicker:get_wielded_item()
-			if tool:get_name() == "bucket:bucket_empty" then
-				if self.gotten == true or self.child == true then
-					return
-				end
-				local inv = clicker:get_inventory()
-				inv:remove_item("main", "bucket:bucket_empty")
-				if inv:room_for_item("main", {name = "mobs_mr_goat:bucket_goatmilk"}) then
-					clicker:get_inventory():add_item("main", "mobs_mr_goat:bucket_goatmilk")
-				else
-					local pos = self.object:getpos()
-					pos.y = pos.y + 0.5
-					minetest.add_item(pos, {name = "mobs_mr_goat:bucket_goatmilk"})
-				end
-				self.gotten = true -- milked
-				return
+			local inv = clicker:get_inventory()
+			inv:remove_item("main", "bucket:bucket_empty")
+			if inv:room_for_item("main", {name = "mobs_mr_goat:bucket_goatmilk"}) then
+				clicker:get_inventory():add_item("main", "mobs_mr_goat:bucket_goatmilk")
+			else
+				local pos = self.object:getpos()
+				pos.y = pos.y + 0.5
+				minetest.add_item(pos, {name = "mobs_mr_goat:bucket_goatmilk"})
 			end
-			mobs:capture_mob(self, clicker, 0, 0, 60, false, nil)
+			self.gotten = true -- milked
+			return
 		end
+	end
 })
 
 local l_spawn_elevation_min = minetest.setting_get("water_level")
@@ -140,7 +93,7 @@ mobs:spawn({
 	min_light = 10,
 	chance = 15000,
 	min_height = l_spawn_elevation_min,
-	max_height = 31000,
+	max_height = 1000,
 	day_toggle = true,
 })
 mobs:register_egg("mobs_mr_goat:goat", "Goat", "default_grass.png", 1)

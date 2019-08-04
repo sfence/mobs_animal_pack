@@ -1,12 +1,10 @@
-if not mobs.mod == "redo" then
-	return
-end
+if not mobs.mod == "redo" then return end
 
 mobs:register_mob("mobs_walrus:walrus", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
-   reach = 1,
+    reach = 1,
 	damage = 5,
 	hp_min = 15,
 	hp_max = 45,
@@ -20,7 +18,7 @@ mobs:register_mob("mobs_walrus:walrus", {
 		{"mobs_walrus_walrus2.png"},
 	},
 	blood_texture = "mobs_blood.png",
-	visual_size = {x=10,y=10},
+	visual_size = {x=20,y=20},
 	makes_footstep_sound = false,
 	sounds = {
 		random = "walrus_random.ogg",

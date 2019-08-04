@@ -1,6 +1,5 @@
-if not mobs.mod == "redo" then
-	return
-end
+if not mobs.mod == "redo" then return end
+
 -- local variables
 local l_skins = {
 	{"bf1.png^bf2.png^bf3.png^bf4.png^bf5.png"},
@@ -39,9 +38,9 @@ mobs:register_mob("mobs_butterfly:butterfly", {
 		walk_start = 0,		walk_end = 90,
 	},
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, 10, 80, 0, true, nil)
+		mobs:capture_mob(self, clicker, 10, 80, 0, true, "mobs_butterfly:butterfly")
 	end
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_butterfly:butterfly", {"air"}, l_spawnnear, 5, 20, 30, l_spawnchance, 1, 0, 31000)
+mobs:spawn_specific("mobs_butterfly:butterfly", {"air"}, l_spawnnear, 5, 20, 30, l_spawnchance, 1, 0, 5000)
 mobs:register_egg("mobs_butterfly:butterfly", "Butterfly", "default_cloud.png", 1)

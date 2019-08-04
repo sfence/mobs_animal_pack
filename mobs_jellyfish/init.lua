@@ -1,6 +1,5 @@
-if not mobs.mod == "redo" then
-	return
-end
+if not mobs.mod == "redo" then return end
+
 mobs:register_mob("mobs_jellyfish:jellyfish", {
 	type = "animal",
 	attack_type = "dogfight",
@@ -26,12 +25,12 @@ mobs:register_mob("mobs_jellyfish:jellyfish", {
 	lava_damage = 5,
 	light_damage = 0,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, 80, 100, 0, true, nil)
+		mobs:capture_mob(self, clicker, 80, 100, 0, true, "mobs_jellyfish:jellyfish")
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
 mobs:spawn_specific("mobs_jellyfish:jellyfish",
 	{"default:water_source"},
 	{"default:water_flowing","default:water_source"},
-	5, 20, 30, 10000, 1, -31000, 0)
+	1, 14, 30, 10000, 1, -50, 0)
 mobs:register_egg("mobs_jellyfish:jellyfish", "Jellyfish", "jellyfish_inv.png", 0)

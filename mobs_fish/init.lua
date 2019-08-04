@@ -1,6 +1,5 @@
-if not mobs.mod == "redo" then
-	return
-end
+if not mobs.mod == "redo" then return end
+
 local SPRITE_VERSION = false	-- set to true to use upright sprites instead of meshes
 
 -- local variables
@@ -42,6 +41,7 @@ end
 -- Clownfish
 mobs:register_mob("mobs_fish:clownfish", {
 	type = "animal",
+	lifetimer = 0,  -- doesn't despawn
 	passive = true,
 	hp_min = 1,
 	hp_max = 4,
@@ -63,7 +63,7 @@ mobs:register_mob("mobs_fish:clownfish", {
 	light_damage = 0,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, nil)
+		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "mobs_fish:clownfish")
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
@@ -73,6 +73,7 @@ mobs:register_egg("mobs_fish:clownfish", "Clownfish", "animal_clownfish_clownfis
 -- Tropical fish
 mobs:register_mob("mobs_fish:tropical", {
 	type = "animal",
+	lifetimer = 0,  -- doesn't despawn
 	passive = true,
 	hp_min = 1,
 	hp_max = 4,
@@ -94,7 +95,7 @@ mobs:register_mob("mobs_fish:tropical", {
 	light_damage = 0,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, nil)
+		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "mobs_fish:tropical")
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
