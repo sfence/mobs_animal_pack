@@ -35,7 +35,7 @@ mobs:register_mob("mobs_doomed:hedgehog", {
 		run_end = 10,
 
 	},
-	follow = {"farming:bread"},
+	follow = {"mobs_bugslive:bug"},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end

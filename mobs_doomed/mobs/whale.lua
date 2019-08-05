@@ -54,4 +54,4 @@ mobs:register_egg("mobs_doomed:whale", "Whale", "wool_blue.png", 1)
 mobs:spawn_specific("mobs_doomed:whale",
 					{"default:water_source"},
 					{"default:water_source"},
-                    0, 14, 30, 30000, 1, -40, 1000, true)
+                    0, 14, 30, 300000, 1, -40, 1000, true)

@@ -43,7 +43,7 @@ mobs:register_mob("mobs_doomed:tortoise", {
 		run_end = 43,
 
 	},
-	follow = {"default:papyrus"},
+	follow = {"farming:cucumber", "farming:pepper", "group:grass"},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
