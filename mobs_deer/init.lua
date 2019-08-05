@@ -41,10 +41,9 @@ mobs:register_mob("mobs_deer:deer", {
 	},
 
 	replace_what = {
-		"default:grass_3",
-		"default:grass_4",
-		"default:grass_5",
-		"farming:wheat_8"
+		"group:grass",
+		"group:plant",
+		"default:apple",
 	},
 	replace_with = "air",
 	replace_rate = 20,
@@ -70,7 +69,7 @@ mobs:spawn({
 		"ethereal:green_dirt_top"
 	},
 	min_light = 10,
-	chance = 15000,
+	chance = 30000,
 	min_height = l_spawn_elevation_min,
 	max_height = 1000,
 	day_toggle = true,

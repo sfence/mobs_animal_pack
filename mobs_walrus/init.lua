@@ -56,7 +56,7 @@ mobs:register_mob("mobs_walrus:walrus", {
 	replace_with = "air",
 })
 
-mobs:register_spawn("mobs_walrus:walrus", {"default:dirt_with_snow", "default:snowblock"}, 20, 0, 20000, 1, 31000)
+mobs:register_spawn("mobs_walrus:walrus", {"default:dirt_with_snow", "default:snowblock"}, 20, 0, 30000, 1, 1000)
 mobs:register_egg("mobs_walrus:walrus", "Walrus", "default_grass.png", 1)
 
 minetest.register_alias_force("arctic_life:walrus", "mobs_walrus:walrus")

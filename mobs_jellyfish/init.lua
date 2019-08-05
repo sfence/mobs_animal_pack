@@ -1,6 +1,7 @@
 if not mobs.mod == "redo" then return end
 
 mobs:register_mob("mobs_jellyfish:jellyfish", {
+	lifetimer = 0,  -- doesn't despawn
 	type = "animal",
 	attack_type = "dogfight",
 	damage = 5,
@@ -12,7 +13,10 @@ mobs:register_mob("mobs_jellyfish:jellyfish", {
 	visual = "mesh",
 	mesh = "jellyfish.b3d",
 	textures = {
-		{"jellyfish.png"}
+		{"jellyfish.png"},
+		{"jellyfish.png^[colorize:black:150"},
+		{"jellyfish.png^[colorize:red:150"},
+		{"jellyfish.png^[colorize:violet:150"},
 	},
 	makes_footstep_sound = false,
 	walk_velocity = 0.1,
@@ -32,5 +36,5 @@ mobs:register_mob("mobs_jellyfish:jellyfish", {
 mobs:spawn_specific("mobs_jellyfish:jellyfish",
 	{"default:water_source"},
 	{"default:water_flowing","default:water_source"},
-	1, 14, 30, 10000, 1, -50, 0)
+	1, 14, 30, 30000, 1, -50, 0)
 mobs:register_egg("mobs_jellyfish:jellyfish", "Jellyfish", "jellyfish_inv.png", 0)

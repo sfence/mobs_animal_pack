@@ -1,42 +1,32 @@
 if not mobs.mod == "redo" then return end
 
-local SPRITE_VERSION = false	-- set to true to use upright sprites instead of meshes
-
 -- local variables
-local l_spawn_in		= {"default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"}
-local l_spawn_near		= {"default:sand","default:dirt","group:seaplants","group:seacoral"}
-local l_spawn_chance	= 10000
-local l_cc_hand			= 25
-local l_cc_net			= 80
-local l_water_level		= minetest.settings:get("water_level") - 1
-local l_anims = {
+local l_spawn_in          = {"default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"}
+local l_spawn_near        = {"default:sand","default:dirt","group:seaplants","group:seacoral"}
+local l_spawn_chance      = 10000
+local l_cc_hand           = 25
+local l_cc_net            = 80
+local l_water_level       = minetest.settings:get("water_level") - 1
+local l_anims             = {
 	speed_normal = 24,		speed_run = 24,
 	stand_start = 1,		stand_end = 80,
 	walk_start = 81,		walk_end = 155,
 	run_start = 81,			run_end = 155
 }
-local l_visual = "mesh"
-local l_visual_size = {x=.75, y=.75}
-local l_clown_mesh = "animal_clownfish.b3d"
-local l_trop_mesh = "fish_blue_white.b3d"
-local l_clown_textures = {
+local l_visual            = "mesh"
+local l_clown_visual_size = { x = .5, y = .5}
+local l_trop_visual_size  = { x = 1, y = 1}
+local l_clown_mesh        = "animal_clownfish.b3d"
+local l_trop_mesh         = "fish_blue_white.b3d"
+local l_clown_textures    = {
 	{"clownfish.png"},
 	{"clownfish2.png"}
 }
-local l_trop_textures = {
+local l_trop_textures     = {
 	{"fish.png"},
 	{"fish2.png"},
 	{"fish3.png"}
 }
-
-if SPRITE_VERSION then
-	l_visual = "upright_sprite"
-	l_visual_size = {x=.5, y=.5}
-	l_clown_mesh = nil
-	l_trop_mesh = nil
-	l_clown_textures = {{"animal_clownfish_clownfish_item.png"}}
-	l_trop_textures = {{"animal_fish_blue_white_fish_blue_white_item.png"}}
-end
 
 -- Clownfish
 mobs:register_mob("mobs_fish:clownfish", {
@@ -51,7 +41,7 @@ mobs:register_mob("mobs_fish:clownfish", {
 	visual = l_visual,
 	mesh = l_clown_mesh,
 	textures = l_clown_textures,
-	visual_size = l_visual_size,
+	visual_size = l_clown_visual_size,
 	makes_footstep_sound = false,
 	stepheight = 0.1,
 	fly = true,
@@ -83,7 +73,7 @@ mobs:register_mob("mobs_fish:tropical", {
 	visual = l_visual,
 	mesh = l_trop_mesh,
 	textures = l_trop_textures,
-	visual_size = l_visual_size,
+	visual_size = l_trop_visual_size,
 	makes_footstep_sound = false,
 	stepheight = 0.1,
 	fly = true,
