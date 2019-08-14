@@ -35,7 +35,9 @@ mobs:register_mob("mobs_doomed:hedgehog", {
 		run_end = 10,
 
 	},
-	follow = {"mobs_bugslive:bug"},
+	follow = {
+		"mobs_bugslive:bug"
+	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
@@ -46,6 +48,9 @@ mobs:register_mob("mobs_doomed:hedgehog", {
 mobs:register_egg("mobs_doomed:hedgehog", "Hedgehog", "wool_brown.png", 1)
 
 mobs:spawn_specific("mobs_doomed:hedgehog",
-					{"default:dirt_with_grass", "default:dirt_with_coniferous_litter"},
+					{
+						"default:dirt_with_grass",
+						"default:dirt_with_coniferous_litter"
+					},
 					{"air"},
                     0, 14, 30, 30000, 2, 0, 1000, nil)

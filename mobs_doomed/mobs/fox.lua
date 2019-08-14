@@ -4,6 +4,11 @@ mobs:register_mob("mobs_doomed:fox", {
 	reach = 1,
 	damage = 2,
 	attack_type = "dogfight",
+	specific_attack = {
+		"mobs_animal:chicken",
+		"mobs_better_rat:rat",
+		"mobs_animal:rat",
+	},
 	hp_min = 42,
 	hp_max = 52,
 	armor = 130,
@@ -43,7 +48,15 @@ mobs:register_mob("mobs_doomed:fox", {
 		punch_start = 36,
 		punch_end = 51,
 	},
-	follow = {"mobs:meat_raw"},
+	follow = {
+		"mobs_better_rat:rat",
+		"mobs_animal:rat",
+		"mobs_animal:kitten",
+		"mobs_animal:kitten_set",
+		"mobs_animal:chicken",
+		"mobs_animal:chicken_set",
+		"mobs:egg",
+	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
@@ -54,6 +67,11 @@ mobs:register_mob("mobs_doomed:fox", {
 mobs:register_egg("mobs_doomed:fox", "Fox", "wool_orange.png", 1)
 
 mobs:spawn_specific("mobs_doomed:fox",
-					{"default:dirt_with_grass", "default:dirt", "default:dirt_with_coniferous_litter", "default:dirt_with_snow"},
+					{
+						"default:dirt_with_grass",
+						"default:dirt",
+						"default:dirt_with_coniferous_litter",
+						"default:dirt_with_snow"
+					},
 					{"air"},
                     0, 14, 30, 30000, 2, 0, 1000, nil)

@@ -31,6 +31,12 @@ mobs:register_mob("mobs_bear:medved", {
 	damage = 10,
 	reach = 3,
 	attacks_monsters = true,
+	specific_attack = {
+		"mobs_doomed:hedgehog",
+		"mobs_bugslive:bug",
+		"mobs_better_rat:rat",
+		"mobs_animal:rat",
+	},
 	pathfinding = true,
 	hp_min = 10,
 	hp_max = 25,
@@ -57,8 +63,17 @@ mobs:register_mob("mobs_bear:medved", {
 
 	follow = {
 		"mobs:honey",
+		"xdecor:honey",
 		"farming:blueberries",
-		"farming:raspberries"
+		"farming:raspberries",
+		"mobs_fish:clownfish",
+		"mobs_fish:tropical",
+		"extra:ground_meat",
+		"extra:meat_patty",
+		"mobs:meat_raw",
+		"mobs:mutton_raw",
+		"mobs:pork_raw",
+		"mobs:rabbit_raw",
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 10, true, true) then return end

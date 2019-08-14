@@ -4,6 +4,13 @@ mobs:register_mob("mobs_doomed:badger", {
 	reach = 1,
 	damage = 2,
 	attack_type = "dogfight",
+	specific_attack = {
+		"mobs_doomed:hedgehog",
+		"mobs_bugslive:bug",
+		"mobs_better_rat:rat",
+		"mobs_animal:rat",
+	},
+
 	hp_min = 12,
 	hp_max = 22,
 	armor = 130,
@@ -41,7 +48,13 @@ mobs:register_mob("mobs_doomed:badger", {
 		punch_start = 60,
 		punch_end = 80,
 	},
-	follow = {"mobs:meat_raw"},
+	follow = {
+		"mobs_doomed:hedgehog",
+		"mobs_bugslive:bug",
+		"mobs_better_rat:rat",
+		"mobs_animal:rat",
+		"mobs:egg",
+	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
@@ -52,6 +65,10 @@ mobs:register_mob("mobs_doomed:badger", {
 mobs:register_egg("mobs_doomed:badger", "Badger", "default_obsidian.png", 1)
 
 mobs:spawn_specific("mobs_doomed:badger",
-				    {"default:dirt_with_grass","default:dirt", "default:dirt_with_coniferous_litter"},
+				    {
+						"default:dirt_with_grass",
+						"default:dirt",
+						"default:dirt_with_coniferous_litter"
+					},
 				    {"air"},
                     0, 14, 30, 30000, 2, 0, 1000, nil)

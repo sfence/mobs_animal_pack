@@ -43,11 +43,16 @@ mobs:register_mob("mobs_deer:deer", {
 	replace_what = {
 		"group:grass",
 		"group:plant",
+		"group:flora",
 		"default:apple",
 	},
 	replace_with = "air",
 	replace_rate = 20,
-	follow = {"farming:wheat", "default:apple"},
+	follow = {
+		"group:flora",
+		"farming:wheat",
+		"default:apple",
+	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end

@@ -42,7 +42,12 @@ mobs:register_mob("mobs_doomed:elephant", {
 		run_start = 3,
 		run_end = 19,
 	},
-	follow = {"farming:wheat"},
+	follow = {
+		"cottages:hay",
+		"cottages:straw_bale",
+		"cottages:straw",
+		"farming:straw",
+	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
 		if mobs:protect(self, clicker) then return end
@@ -53,6 +58,9 @@ mobs:register_mob("mobs_doomed:elephant", {
 mobs:register_egg("mobs_doomed:elephant", "Elephant", "default_dry_grass.png", 1)
 
 mobs:spawn_specific("mobs_doomed:elephant",
-					{"default:dirt_with_dry_grass", "default:desert_sand"},
+					{
+						"default:dirt_with_dry_grass",
+						"default:desert_sand"
+					},
 					{"air"},
                     10, 14, 30, 30000, 2, 0, 1000, true)
