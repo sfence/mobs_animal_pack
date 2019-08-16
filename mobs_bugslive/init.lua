@@ -77,6 +77,6 @@ mobs:spawn_specific("mobs_bugslive:bug",
 		"ethereal:green_dirt_top"
 	},
 	{"air", "default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"},
-	0, 15, 30, 30000, 2, -25000, 1000
+	0, 15, 30, 300000, 2, -25000, 1000
 )
 mobs:register_egg("mobs_bugslive:bug", "Bug", "inv_bug.png", 0)

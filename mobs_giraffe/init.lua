@@ -73,7 +73,7 @@ mobs:spawn({
 	name = "mobs_giraffe:jeraf",
 	nodes = {"default:sand", "default:desert_sand", "default:dirt_with_dry_grass"},
 	min_light = 10,
-	chance = 30000,
+	chance = 300000,
 	min_height = l_spawn_elevation_min,
 	max_height = 1000,
 	day_toggle = true,

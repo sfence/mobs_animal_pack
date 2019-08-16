@@ -21,7 +21,7 @@ local l_anims = {
 	hide_start = 95,	hide_end = 100
 }
 local l_model			= "mobf_turtle.x"
-local l_spawn_chance	= 30000
+local l_spawn_chance	= 300000
 
 -- land turtle
 mobs:register_mob("mobs_turtles:turtle", {

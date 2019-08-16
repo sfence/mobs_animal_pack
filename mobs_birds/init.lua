@@ -29,8 +29,8 @@ local l_capture_chance_n	= 60
 local l_spawn_in			= {"air"}
 local l_spawn_near_gull		= {"default:water_source", "default:water_flowing"}
 local l_spawn_near_bird		= {"default:leaves", "default:pine_needles", "default:jungleleaves", "default:cactus"}
-local l_spawn_chance_gull	= 24000
-local l_spawn_chance_bird	= 36000
+local l_spawn_chance_gull	= 240000
+local l_spawn_chance_bird	= 360000
 
 -- gulls
 mobs:register_mob("mobs_birds:gull", {

@@ -91,7 +91,7 @@ mobs:spawn({
 	name = "mobs_mr_goat:goat",
 	nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
 	min_light = 10,
-	chance = 30000,
+	chance = 300000,
 	min_height = l_spawn_elevation_min,
 	max_height = 1000,
 	day_toggle = true,

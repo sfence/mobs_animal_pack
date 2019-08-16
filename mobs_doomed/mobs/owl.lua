@@ -46,4 +46,4 @@ mobs:register_egg("mobs_doomed:owl", "Owl", "default_tree.png", 1)
 mobs:spawn_specific("mobs_doomed:owl",
 					{"group:leaves"},
 					{"air"},
-                    0, 14, 30, 30000, 2, 0, 1000, false)
+                    0, 14, 30, 300000, 2, 0, 1000, false)

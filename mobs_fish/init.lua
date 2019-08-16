@@ -3,7 +3,7 @@ if not mobs.mod == "redo" then return end
 -- local variables
 local l_spawn_in          = {"default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"}
 local l_spawn_near        = {"default:sand","default:dirt","group:seaplants","group:seacoral"}
-local l_spawn_chance      = 10000
+local l_spawn_chance      = 100000
 local l_cc_hand           = 25
 local l_cc_net            = 80
 local l_water_level       = minetest.settings:get("water_level") - 1

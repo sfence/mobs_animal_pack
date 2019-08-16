@@ -10,7 +10,7 @@ local l_skins = {
 	{"(bf1.png^[colorize:darkgreen)^(bf2.png^[colorize:brown)^(bf3.png^[colorize:black)^(bf4.png^[colorize:darkgray)^(bf5.png^[colorize:red)"}
 }
 local l_spawnnear	= {"group:flower"}
-local l_spawnchance	= 30000
+local l_spawnchance	= 300000
 
 -- Butterfly
 mobs:register_mob("mobs_butterfly:butterfly", {

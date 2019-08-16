@@ -56,4 +56,4 @@ mobs:register_egg("mobs_doomed:tortoise", "Tortoise", "default_grass.png", 1)
 mobs:spawn_specific("mobs_doomed:tortoise",
 					{"default:clay", "group:sand"},
 					{"air"},
-                    10, 14, 30, 30000, 2, 0, 1000, true)
+                    10, 14, 30, 300000, 2, 0, 1000, true)

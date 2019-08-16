@@ -53,4 +53,4 @@ mobs:spawn_specific("mobs_doomed:hedgehog",
 						"default:dirt_with_coniferous_litter"
 					},
 					{"air"},
-                    0, 14, 30, 30000, 2, 0, 1000, nil)
+                    0, 14, 30, 300000, 2, 0, 1000, nil)

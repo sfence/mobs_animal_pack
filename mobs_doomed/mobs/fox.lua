@@ -74,4 +74,4 @@ mobs:spawn_specific("mobs_doomed:fox",
 						"default:dirt_with_snow"
 					},
 					{"air"},
-                    0, 14, 30, 30000, 2, 0, 1000, nil)
+                    0, 14, 30, 300000, 2, 0, 1000, nil)

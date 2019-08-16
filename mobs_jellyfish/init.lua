@@ -36,5 +36,5 @@ mobs:register_mob("mobs_jellyfish:jellyfish", {
 mobs:spawn_specific("mobs_jellyfish:jellyfish",
 	{"default:water_source"},
 	{"default:water_flowing","default:water_source"},
-	1, 14, 30, 30000, 1, -50, 0)
+	1, 14, 30, 300000, 1, -50, 0)
 mobs:register_egg("mobs_jellyfish:jellyfish", "Jellyfish", "jellyfish_inv.png", 0)

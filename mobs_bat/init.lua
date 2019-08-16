@@ -6,7 +6,7 @@ local l_skins = {
 	{"animal_bat.png^[colorize:black:150"}
 }
 local l_spawnnear	= {"default:stone"}
-local l_spawnchance	= 30000
+local l_spawnchance	= 300000
 
 mobs:register_mob("mobs_bat:bat", {
 	type = "animal",
