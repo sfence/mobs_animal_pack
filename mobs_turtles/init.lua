@@ -104,9 +104,12 @@ mobs:register_mob("mobs_turtles:seaturtle", {
 	light_damage = 0,
 	fall_damage = 0,
 	animation = l_anims,
-	--on_rightclick = function(self, clicker)
-	--	mobs:capture_mob(self, clicker, 0, 0, 80, true, nil)
-	--end
+	follow = {"default:sand_with_kelp"},
+	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 8, true, true) then return end
+		if mobs:protect(self, clicker) then return end
+		if mobs:capture_mob(self, clicker, 60, 80, 100, false, nil) then return end
+	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
 mobs:spawn_specific("mobs_turtles:seaturtle",
