@@ -50,6 +50,7 @@ mobs:register_mob("mobs_deer:deer", {
 	replace_rate = 20,
 	follow = {
 		"group:flora",
+		"group:grass",
 		"farming:wheat",
 		"default:apple",
 	},

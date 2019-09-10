@@ -39,6 +39,10 @@ mobs:register_mob("mobs_doomed:owl", {
 		walk_start = 1,
 		walk_end = 50,
 	},
+	drops = {
+		{name="mobs:meat_raw", chance=1, min=0, max=2},
+		{name="mobs:chicken_feather", chance=1, min=0, max=2}
+	},
 })
 
 mobs:register_egg("mobs_doomed:owl", "Owl", "default_tree.png", 1)

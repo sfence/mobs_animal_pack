@@ -56,7 +56,11 @@ mobs:register_mob("mobs_birds:gull", {
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
 		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "mobs_birds:gull")
-	end
+	end,
+	drops = {
+		{name="mobs:meat_raw", chance=1, min=0, max=2},
+		{name="mobs:chicken_feather", chance=1, min=0, max=2}
+	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
 mobs:spawn_specific("mobs_birds:gull", l_spawn_in, l_spawn_near_gull, 5, 20, 30, l_spawn_chance_gull, 1, 0, 5000)
@@ -87,7 +91,11 @@ mobs:register_mob("mobs_birds:bird_lg", {
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
 		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "mobs_birds:bird_lg")
-	end
+	end,
+	drops = {
+		{name="mobs:meat_raw", chance=1, min=0, max=2},
+		{name="mobs:chicken_feather", chance=1, min=0, max=2}
+	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
 mobs:spawn_specific("mobs_birds:bird_lg", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
@@ -118,7 +126,11 @@ mobs:register_mob("mobs_birds:bird_sm", {
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
 		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "mobs_birds:bird_sm")
-	end
+	end,
+	drops = {
+		{name="mobs:meat_raw", chance=1, min=0, max=1},
+		{name="mobs:chicken_feather", chance=1, min=0, max=1}
+	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
 mobs:spawn_specific("mobs_birds:bird_sm", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)

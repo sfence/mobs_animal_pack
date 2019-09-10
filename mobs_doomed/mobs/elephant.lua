@@ -30,7 +30,8 @@ mobs:register_mob("mobs_doomed:elephant", {
 	replace_with = "air",
 	view_range = 14,
 	drops = {
-		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
+		{name = "mobs:meat_raw", chance=1, min = 4, max = 12},
+		{name="mobs:leather", chance=1, min=4, max=12},
 	},
 	animation = {
 		speed_normal = 5,

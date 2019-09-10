@@ -8,6 +8,7 @@ mobs:register_mob("mobs_doomed:fox", {
 		"mobs_animal:chicken",
 		"mobs_better_rat:rat",
 		"mobs_animal:rat",
+		"mobs_animal:kitten",
 	},
 	hp_min = 42,
 	hp_max = 52,

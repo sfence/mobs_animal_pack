@@ -36,7 +36,12 @@ mobs:register_mob("mobs_doomed:hedgehog", {
 
 	},
 	follow = {
-		"mobs_bugslive:bug"
+		"mobs_bugslive:bug",
+		"mobs_butterfly:butterfly",
+		"butterflies:butterfly_red",
+		"butterflies:butterfly_violet",
+		"butterflies:butterfly_white",
+		"fireflies:firefly",
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end

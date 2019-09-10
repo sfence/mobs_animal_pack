@@ -45,7 +45,10 @@ mobs:register_mob("mobs_bat:bat", {
 	},
 	on_rightclick = function(self, clicker)
 		mobs:capture_mob(self, clicker, 5, 60, 0, true, "mobs_bat:bat")
-	end
+	end,
+	drops = {
+		{name="mobs:meat_raw", chance=1, min=0, max=1},
+	},
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
