@@ -105,7 +105,6 @@ minetest.register_node("mobs_snowman:tophat", {
 		end
 		p.y = p.y - 4
 		minetest.add_entity(p, "mobs_snowman:snowman")
-		return true
 	end
 })
 
