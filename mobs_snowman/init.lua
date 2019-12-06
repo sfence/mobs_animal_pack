@@ -96,7 +96,7 @@ minetest.register_node("mobs_snowman:tophat", {
 			p.y = p.y - 1
 			local name = minetest.get_node(p).name
 			if name ~= "default:snowblock" then
-				return true
+				return
 			end
 		end
 		for i = 1,4 do
