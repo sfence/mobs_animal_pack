@@ -117,6 +117,16 @@ minetest.register_craft({
 	}
 })
 
+local function sb_is_protected_area(pos)
+	if minetest.global_exists("areas") then
+		for id, area in pairs(areas:getAreasAtPos(pos)) do
+			if not area.open then
+				return true
+			end
+		end
+	end
+end
+
 core.register_entity("mobs_snowman:snowball", {
 	physical = false,
 	weight = 5,
@@ -136,30 +146,35 @@ core.register_entity("mobs_snowman:snowball", {
 			return self
 		end
 
+		local pos_above = vector.add(pos, vector.new(0,1,0))
 		local node = core.get_node_or_nil(pos)
-		if node and node.name ~= "" and node.name ~= "default:snow" then
-			if core.registered_nodes[node.name].walkable then
-				self.object:setvelocity({x=0, y=0, z=0})
-				self.object:setacceleration({x=0, y=0, z=0})
-				pos.y = pos.y + 1
+		local node_def = (node and minetest.registered_nodes[node.name]) or {}
+		local node_above = core.get_node_or_nil(pos_above)
+		local node_above_def = (node_above and minetest.registered_nodes[node_above.name]) or {}
+
+		if node and node.name ~= "" and node.name ~= "default:snow" and node_def.walkable then
+			self.object:setvelocity({x=0, y=0, z=0})
+			self.object:setacceleration({x=0, y=0, z=0})
+			pos.y = pos.y + 1
+			if node_above_def.buildable_to and not sb_is_protected_area(pos_above) then
 				minetest.set_node(pos, {name="default:snow"})
-				self.object:remove()
-				core.sound_play("default_dig_dig_immediate", {pos=pos, gain=1.0, max_hear_distance=7})
-				return self
 			end
+			self.object:remove()
+			core.sound_play("default_snow_footstep", {pos=pos, gain=1.0, max_hear_distance=7})
+			return self
 		end
 
 		if self.timer > 0.2 then
 			local objs = minetest.get_objects_inside_radius({x=pos.x,y=pos.y,z=pos.z}, 1)
 			for i = 1,#objs do
 				local obj = objs[i]
-				if obj and ((obj:is_player()) or (obj:get_luaentity() and obj:get_luaentity().physical and obj:get_luaentity().name ~= "__builtin:item" )) then
+				if obj and ((obj:is_player() and obj:get_player_name() ~= self.thrower) or (obj:get_luaentity() and obj:get_luaentity().physical and obj:get_luaentity().name ~= "__builtin:item" )) then
 					obj:punch(self.object, 1.0, {
 						full_punch_interval=1.0,
 						damage_groups = {fleshy=1},
 					}, nil)
 					self.object:remove()
-					core.sound_play("default_dig_dig_immediate", {pos=pos, gain=1.0, max_hear_distance=7})
+					core.sound_play("default_snow_footstep", {pos=pos, gain=1.0, max_hear_distance=7})
 					break
 				end
 			end
