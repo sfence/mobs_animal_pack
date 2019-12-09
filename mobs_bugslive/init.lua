@@ -71,8 +71,6 @@ mobs:spawn_specific("mobs_bugslive:bug",
 		"default:dirt_with_coniferous_litter",
 		"default:dirt_with_dry_grass",
 		"default:dirt_with_rainforest_litter",
-		"farming:soil",
-		"farming:wet_soil",
 		"default:stone",
 		"ethereal:green_dirt_top"
 	},
