@@ -23,7 +23,7 @@ mobs:register_mob("mobs_doomed:tortoise", {
 	jump_height = 0.5,
 	floats = true,
 	drops = {
-		{name = "default:stick", chance = 1, min = 1, max = 1},
+		{name = "mobs:meat_raw", chance = 1, min = 1, max = 6},
 	},
 	water_damage = 0,
 	lava_damage = 2,

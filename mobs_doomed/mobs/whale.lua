@@ -30,7 +30,9 @@ mobs:register_mob("mobs_doomed:whale", {
 	follow = {"fishing:fish_cooked"},
 	view_range = 14,
 	drops = {
-		{name = "mobs:meat_raw", chance = 1, min = 1, max = 1},
+		{name = "mobs:meat_raw", chance = 1, min = 15, max = 30},
+		{name = "basic_materials:oil_extract", chance = 1, min = 15, max = 30},
+		{name = "bonemeal:bone", chance = 1, min = 10, max = 20},
 	},
 	sounds = {
       random = "whale_1",
