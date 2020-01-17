@@ -108,7 +108,7 @@ mobs:spawn({
 	min_light = 10,
 	chance = 300000,
 	min_height = l_spawn_elevation_min,
-	max_height = 1000,
+	max_height = 5000,
 	day_toggle = true,
 })
 mobs:register_egg("mobs_bear:medved", "Bear", "wool_brown.png", 1)

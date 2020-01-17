@@ -52,5 +52,5 @@ mobs:register_mob("mobs_bat:bat", {
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_bat:bat", {"air"}, l_spawnnear, 0, 6, 30, l_spawnchance, 2, -25000, 1000)
+mobs:spawn_specific("mobs_bat:bat", {"air"}, l_spawnnear, 0, 6, 30, l_spawnchance, 2, -25000, 5000)
 mobs:register_egg("mobs_bat:bat", "Bat", "animal_bat_inv.png", 0)

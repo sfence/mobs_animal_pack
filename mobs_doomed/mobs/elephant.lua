@@ -64,4 +64,4 @@ mobs:spawn_specific("mobs_doomed:elephant",
 						"default:desert_sand"
 					},
 					{"air"},
-                    10, 14, 30, 300000, 2, 0, 1000, true)
+                    10, 14, 30, 300000, 2, 0, 5000, true)

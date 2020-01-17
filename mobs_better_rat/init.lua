@@ -64,6 +64,6 @@ mobs:register_mob("mobs_better_rat:rat", {
 mobs:spawn_specific("mobs_better_rat:rat",
 	{"default:stone"},
 	{"air"},
-	0, 14, 30, 300000, 2, -25000, 1000
+	0, 14, 30, 300000, 2, -25000, 5000
 )
 mobs:register_egg("mobs_better_rat:rat", "Mouse", "wool_brown.png", 1)

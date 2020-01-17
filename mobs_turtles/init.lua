@@ -97,7 +97,7 @@ mobs:register_mob("mobs_turtles:turtle", {
 mobs:spawn_specific("mobs_turtles:turtle",
 	{"default:dirt_with_grass","default:jungle_grass","default:sand","default:desert_sand"},
 	{"default:dirt_with_grass","default:jungle_grass","default:sand","default:desert_sand","default:papyrus","default:cactus","dryplants:juncus","dryplants:reedmace"},
-	5, 20, 30, l_spawn_chance, 1, 1, 31000)
+	5, 20, 30, l_spawn_chance, 1, 1, 5000)
 mobs:register_egg("mobs_turtles:turtle", "Turtle", "default_grass.png", 1)
 
 -- sea turtle
@@ -142,5 +142,5 @@ mobs:register_mob("mobs_turtles:seaturtle", {
 mobs:spawn_specific("mobs_turtles:seaturtle",
 	{"default:water_flowing","default:water_source"},
 	{"default:water_flowing","default:water_source","group:seaplants","seawrecks:woodship","seawrecks:uboot"},
-	5, 20, 30, l_spawn_chance, 1, -31000, 0)
+	5, 20, 30, l_spawn_chance, 1, -50, 0)
 mobs:register_egg("mobs_turtles:seaturtle", "Sea Turtle", "default_water.png", 1)

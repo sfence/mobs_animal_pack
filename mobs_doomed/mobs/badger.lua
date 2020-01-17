@@ -71,4 +71,4 @@ mobs:spawn_specific("mobs_doomed:badger",
 						"default:dirt_with_coniferous_litter"
 					},
 				    {"air"},
-                    0, 14, 30, 300000, 2, 0, 1000, nil)
+                    0, 14, 30, 300000, 2, 0, 5000)
