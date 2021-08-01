@@ -134,7 +134,7 @@ core.register_entity("mobs_snowman:snowball", {
 	visual = "sprite",
 	visual_size = {x=0.5, y=0.5},
 	textures = {"default_snowball.png"},
-	automatic_rotate = false,
+	automatic_rotate = 0,
 	timer = 20,
 	on_step = function(self, dtime)
 		local pos = self.object:getpos()
