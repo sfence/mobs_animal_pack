@@ -71,6 +71,8 @@ mobs:register_mob("mobs_turtles:turtle", {
 		"farming:pea_pod",
 		"farming:peas",
 		"farming:pepper",
+		"farming:pepper_yellow",
+		"farming:pepper_red",
 		"farming:pumpkin",
 		"farming:pumpkin_8",
 		"farming:pumpkin_slice",
