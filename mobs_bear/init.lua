@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_bear:medved", {
+mobs:register_mob("hades_bear:medved", {
 	type = "animal",
 	visual = "mesh",
 	visual_size = {x=1.5, y=1.5},
@@ -103,7 +103,7 @@ mobs:register_mob("mobs_bear:medved", {
 
 local l_spawn_elevation_min = (minetest.setting_get("water_level") or 0) - 10
 mobs:spawn({
-	name = "mobs_bear:medved",
+	name = "hades_bear:medved",
 	nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
 	min_light = 10,
 	chance = 300000,
@@ -111,4 +111,4 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
-mobs:register_egg("mobs_bear:medved", "Bear", "wool_brown.png", 1)
+mobs:register_egg("hades_bear:medved", "Bear", "wool_brown.png", 1)

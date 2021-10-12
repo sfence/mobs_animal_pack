@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_better_rat:rat", {
+mobs:register_mob("hades_better_rat:rat", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "rat.b3d",
@@ -56,14 +56,14 @@ mobs:register_mob("mobs_better_rat:rat", {
 	replace_rate = 10,
 	follow = {"mobs:cheese", "mobs_mr_goat:goatcheese"},
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, 25, 80, 0, true, "mobs_better_rat:rat")
+		mobs:capture_mob(self, clicker, 25, 80, 0, true, "hades_better_rat:rat")
 	end
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_better_rat:rat",
+mobs:spawn_specific("hades_better_rat:rat",
 	{"default:stone"},
 	{"air"},
 	0, 14, 30, 300000, 2, -25000, 5000
 )
-mobs:register_egg("mobs_better_rat:rat", "Mouse", "wool_brown.png", 1)
+mobs:register_egg("hades_better_rat:rat", "Mouse", "wool_brown.png", 1)

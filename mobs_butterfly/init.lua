@@ -13,7 +13,7 @@ local l_spawnnear	= {"group:flower"}
 local l_spawnchance	= 300000
 
 -- Butterfly
-mobs:register_mob("mobs_butterfly:butterfly", {
+mobs:register_mob("hades_butterfly:butterfly", {
 	type = "animal",
 	passive = true,
 	hp_min = 1,
@@ -38,9 +38,9 @@ mobs:register_mob("mobs_butterfly:butterfly", {
 		walk_start = 0,		walk_end = 90,
 	},
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, 10, 80, 0, true, "mobs_butterfly:butterfly")
+		mobs:capture_mob(self, clicker, 10, 80, 0, true, "hades_butterfly:butterfly")
 	end
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_butterfly:butterfly", {"air"}, l_spawnnear, 5, 20, 30, l_spawnchance, 1, 0, 5000)
-mobs:register_egg("mobs_butterfly:butterfly", "Butterfly", "default_cloud.png", 1)
+mobs:spawn_specific("hades_butterfly:butterfly", {"air"}, l_spawnnear, 5, 20, 30, l_spawnchance, 1, 0, 5000)
+mobs:register_egg("hades_butterfly:butterfly", "Butterfly", "default_cloud.png", 1)

@@ -29,7 +29,7 @@ local l_trop_textures     = {
 }
 
 -- Clownfish
-mobs:register_mob("mobs_fish:clownfish", {
+mobs:register_mob("hades_fish:clownfish", {
 	type = "animal",
 	lifetimer = 0,  -- doesn't despawn
 	passive = true,
@@ -53,15 +53,15 @@ mobs:register_mob("mobs_fish:clownfish", {
 	light_damage = 0,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "mobs_fish:clownfish")
+		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "hades_fish:clownfish")
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_fish:clownfish", l_spawn_in, l_spawn_near, 5, 20, 30, l_spawn_chance, 1, -50, l_water_level)
-mobs:register_egg("mobs_fish:clownfish", "Clownfish", "animal_clownfish_clownfish_item.png", 0)
+mobs:spawn_specific("hades_fish:clownfish", l_spawn_in, l_spawn_near, 5, 20, 30, l_spawn_chance, 1, -50, l_water_level)
+mobs:register_egg("hades_fish:clownfish", "Clownfish", "animal_clownfish_clownfish_item.png", 0)
 
 -- Tropical fish
-mobs:register_mob("mobs_fish:tropical", {
+mobs:register_mob("hades_fish:tropical", {
 	type = "animal",
 	lifetimer = 0,  -- doesn't despawn
 	passive = true,
@@ -85,9 +85,9 @@ mobs:register_mob("mobs_fish:tropical", {
 	light_damage = 0,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "mobs_fish:tropical")
+		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "hades_fish:tropical")
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_fish:tropical", l_spawn_in, l_spawn_near, 5, 20, 30, l_spawn_chance, 1, -50, l_water_level)
-mobs:register_egg("mobs_fish:tropical", "Tropical fish", "animal_fish_blue_white_fish_blue_white_item.png", 0)
+mobs:spawn_specific("hades_fish:tropical", l_spawn_in, l_spawn_near, 5, 20, 30, l_spawn_chance, 1, -50, l_water_level)
+mobs:register_egg("hades_fish:tropical", "Tropical fish", "animal_fish_blue_white_fish_blue_white_item.png", 0)

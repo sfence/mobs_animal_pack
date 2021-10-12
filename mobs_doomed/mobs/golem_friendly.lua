@@ -1,4 +1,4 @@
-minetest.register_node("mobs_doomed:golemstone", {
+minetest.register_node("hades_doomed:golemstone", {
 	description = "golem stone",
 	tiles = {"mobs_doomed_golem_stone.png",},
 	groups = {cracky=1},
@@ -7,7 +7,7 @@ minetest.register_node("mobs_doomed:golemstone", {
 		local node2 = minetest.get_node({x=pos.x, y=pos.y-2, z=pos.z}).name
 		local node3 = minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name
 		if node1 == "default:stone" and node2 == "default:stone" and node3 == "air" then
-		minetest.add_entity(pos, "mobs_doomed:golem_friendly")
+		minetest.add_entity(pos, "hades_doomed:golem_friendly")
 		minetest.remove_node({x=pos.x, y=pos.y-1, z=pos.z})
 		minetest.remove_node({x=pos.x, y=pos.y-2, z=pos.z})
 		minetest.remove_node({x=pos.x, y=pos.y, z=pos.z})
@@ -15,7 +15,7 @@ minetest.register_node("mobs_doomed:golemstone", {
 	end,
 })
 
-mobs:register_mob("mobs_doomed:golem_friendly", {
+mobs:register_mob("hades_doomed:golem_friendly", {
 	type = "npc",
 	reach = 3,
 	damage = 2,
@@ -57,4 +57,4 @@ mobs:register_mob("mobs_doomed:golem_friendly", {
 	},
 })
 
-mobs:register_egg("mobs_doomed:golem_friendly", "Stone Golem (friendly)", "default_stone.png", 1)
+mobs:register_egg("hades_doomed:golem_friendly", "Stone Golem (friendly)", "default_stone.png", 1)

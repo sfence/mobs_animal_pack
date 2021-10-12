@@ -8,7 +8,7 @@ local l_skins = {
 local l_spawnnear	= {"default:stone"}
 local l_spawnchance	= 300000
 
-mobs:register_mob("mobs_bat:bat", {
+mobs:register_mob("hades_bat:bat", {
 	type = "animal",
 	damage = 1,
 	reach = 1,
@@ -44,7 +44,7 @@ mobs:register_mob("mobs_bat:bat", {
 		punch_start = 60,		punch_end = 89
 	},
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, 5, 60, 0, true, "mobs_bat:bat")
+		mobs:capture_mob(self, clicker, 5, 60, 0, true, "hades_bat:bat")
 	end,
 	drops = {
 		{name="mobs:meat_raw", chance=1, min=0, max=1},
@@ -52,5 +52,5 @@ mobs:register_mob("mobs_bat:bat", {
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_bat:bat", {"air"}, l_spawnnear, 0, 6, 30, l_spawnchance, 2, -25000, 5000)
-mobs:register_egg("mobs_bat:bat", "Bat", "animal_bat_inv.png", 0)
+mobs:spawn_specific("hades_bat:bat", {"air"}, l_spawnnear, 0, 6, 30, l_spawnchance, 2, -25000, 5000)
+mobs:register_egg("hades_bat:bat", "Bat", "animal_bat_inv.png", 0)

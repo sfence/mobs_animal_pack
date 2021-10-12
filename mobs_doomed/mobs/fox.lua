@@ -1,4 +1,4 @@
-mobs:register_mob("mobs_doomed:fox", {
+mobs:register_mob("hades_doomed:fox", {
 	type = "animal",
 	attacks_monsters = true,
 	reach = 1,
@@ -65,9 +65,9 @@ mobs:register_mob("mobs_doomed:fox", {
 	end,
 })
 
-mobs:register_egg("mobs_doomed:fox", "Fox", "wool_orange.png", 1)
+mobs:register_egg("hades_doomed:fox", "Fox", "wool_orange.png", 1)
 
-mobs:spawn_specific("mobs_doomed:fox",
+mobs:spawn_specific("hades_doomed:fox",
 					{
 						"default:dirt_with_grass",
 						"default:dirt",

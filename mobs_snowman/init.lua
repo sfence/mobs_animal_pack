@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_snowman:snowman", {
+mobs:register_mob("hades_snowman:snowman", {
 	type = "animal",
 	lifetimer = 0,  -- doesn't despawn
 
@@ -67,7 +67,7 @@ mobs:register_mob("mobs_snowman:snowman", {
 							self.object:setyaw(yaw)
 						end
 
-						local ent = minetest.add_entity({x=p1.x, y=p1.y+1.5, z=p1.z}, "mobs_snowman:snowball")
+						local ent = minetest.add_entity({x=p1.x, y=p1.y+1.5, z=p1.z}, "hades_snowman:snowball")
 						ent:setvelocity(vec)
 						ent:setacceleration({x=vec.x*0.5, y=-5, z=vec.z*0.5})
 						break
@@ -77,7 +77,7 @@ mobs:register_mob("mobs_snowman:snowman", {
 		end
 })
 
-minetest.register_node("mobs_snowman:tophat", {
+minetest.register_node("hades_snowman:tophat", {
 	description = "Top Hat",
 	tiles = {"default_coal_block.png"},
 	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3,flammable=3},
@@ -104,12 +104,12 @@ minetest.register_node("mobs_snowman:tophat", {
 			p.y = p.y + 1
 		end
 		p.y = p.y - 4
-		minetest.add_entity(p, "mobs_snowman:snowman")
+		minetest.add_entity(p, "hades_snowman:snowman")
 	end
 })
 
 minetest.register_craft({
-	output = "mobs_snowman:tophat",
+	output = "hades_snowman:tophat",
 	recipe = {
 		{"", "wool:black", ""},
 		{"", "wool:black", ""},
@@ -127,7 +127,7 @@ local function sb_is_protected_area(pos)
 	end
 end
 
-core.register_entity("mobs_snowman:snowball", {
+core.register_entity("hades_snowman:snowball", {
 	physical = false,
 	weight = 5,
 	collisionbox = {0,0,0,0,0,0},

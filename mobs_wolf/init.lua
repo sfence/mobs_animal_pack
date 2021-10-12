@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_wolf:wolf", {
+mobs:register_mob("hades_wolf:wolf", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_wolf.x",
@@ -45,7 +45,7 @@ mobs:register_mob("mobs_wolf:wolf", {
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 6, false, true) then
 			if self.food == 0 then
-				local mob = minetest.add_entity(self.object:getpos(), "mobs_wolf:dog")
+				local mob = minetest.add_entity(self.object:getpos(), "hades_wolf:dog")
 				local ent = mob:get_luaentity()
 				ent.owner = clicker:get_player_name()
 				ent.following = clicker
@@ -64,7 +64,7 @@ else
 	l_spawn_elevation_min = -5
 end
 mobs:spawn({
-	name = "mobs_wolf:wolf",
+	name = "hades_wolf:wolf",
 	nodes = {
 		"default:dirt_with_grass",
 		"default:dirt_with_snow",
@@ -77,10 +77,10 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
-mobs:register_egg("mobs_wolf:wolf", "Wolf", "wool_grey.png", 1)
+mobs:register_egg("hades_wolf:wolf", "Wolf", "wool_grey.png", 1)
 
 -- Dog
-mobs:register_mob("mobs_wolf:dog", {
+mobs:register_mob("hades_wolf:dog", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_wolf.x",
@@ -153,4 +153,4 @@ mobs:register_mob("mobs_wolf:dog", {
 	end
 })
 
-mobs:register_egg("mobs_wolf:dog", "Dog", "wool_brown.png", 1)
+mobs:register_egg("hades_wolf:dog", "Dog", "wool_brown.png", 1)

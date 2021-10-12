@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_giraffe:jeraf", {
+mobs:register_mob("hades_giraffe:jeraf", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_jeraf.x",
@@ -70,7 +70,7 @@ else
 	l_spawn_elevation_min = 1
 end
 mobs:spawn({
-	name = "mobs_giraffe:jeraf",
+	name = "hades_giraffe:jeraf",
 	nodes = {"default:sand", "default:desert_sand", "default:dirt_with_dry_grass"},
 	min_light = 10,
 	chance = 300000,
@@ -78,4 +78,4 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
-mobs:register_egg("mobs_giraffe:jeraf", "Giraffe", "wool_yellow.png", 1)
+mobs:register_egg("hades_giraffe:jeraf", "Giraffe", "wool_yellow.png", 1)

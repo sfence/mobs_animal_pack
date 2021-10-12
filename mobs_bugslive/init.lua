@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_bugslive:bug", {
+mobs:register_mob("hades_bugslive:bug", {
 	type = "animal",
 	visual = "mesh",
 	visual_size = {x=0.5, y=0.5},
@@ -59,12 +59,12 @@ mobs:register_mob("mobs_bugslive:bug", {
 			end
 		end,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, 50, 80, 0, true, "mobs_bugslive:bug")
+		mobs:capture_mob(self, clicker, 50, 80, 0, true, "hades_bugslive:bug")
 	end
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_bugslive:bug",
+mobs:spawn_specific("hades_bugslive:bug",
 	{
 		"default:dirt",
 		"default:dirt_with_grass",
@@ -77,4 +77,4 @@ mobs:spawn_specific("mobs_bugslive:bug",
 	{"air", "default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"},
 	0, 15, 30, 300000, 2, -25000, 5000
 )
-mobs:register_egg("mobs_bugslive:bug", "Bug", "inv_bug.png", 0)
+mobs:register_egg("hades_bugslive:bug", "Bug", "inv_bug.png", 0)

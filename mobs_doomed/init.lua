@@ -17,10 +17,11 @@ mobs_doomed.deepclone = function(t) -- deep-copy a table -- from https://gist.gi
 end
 
 -- Start loading ----------------------------------------------------------------------------------
+local modpath = minetest.get_modpath(minetest.get_current_modname()) 
 
 local function loadmob(mobname,dir)
 	dir = dir or "/mobs/"
-	dofile(minetest.get_modpath("mobs_doomed")..dir..mobname..".lua")
+	dofile(modpath..dir..mobname..".lua")
 end
 
 -- regular mobs

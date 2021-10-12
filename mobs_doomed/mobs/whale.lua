@@ -1,4 +1,4 @@
-mobs:register_mob("mobs_doomed:whale", {
+mobs:register_mob("hades_doomed:whale", {
 	type = "animal",
 	passive = false,
 	reach = 1,
@@ -51,9 +51,9 @@ mobs:register_mob("mobs_doomed:whale", {
 	},
 })
 
-mobs:register_egg("mobs_doomed:whale", "Whale", "wool_blue.png", 1)
+mobs:register_egg("hades_doomed:whale", "Whale", "wool_blue.png", 1)
 
-mobs:spawn_specific("mobs_doomed:whale",
+mobs:spawn_specific("hades_doomed:whale",
 					{"default:water_source"},
 					{"default:water_source"},
                     0, 14, 30, 3000000, 1, -40, 0, true)

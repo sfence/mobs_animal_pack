@@ -1,14 +1,14 @@
-mobs:register_mob("mobs_doomed:badger", {
+mobs:register_mob("hades_doomed:badger", {
 	type = "animal",
 	passive = false,
 	reach = 1,
 	damage = 2,
 	attack_type = "dogfight",
 	specific_attack = {
-		"mobs_doomed:hedgehog",
-		"mobs_bugslive:bug",
-		"mobs_better_rat:rat",
-		"mobs_animal:rat",
+		"hades_doomed:hedgehog",
+		"hades_bugslive:bug",
+		"hades_better_rat:rat",
+		"hades_animal:rat",
 	},
 
 	hp_min = 12,
@@ -49,7 +49,7 @@ mobs:register_mob("mobs_doomed:badger", {
 		punch_end = 80,
 	},
 	follow = {
-		"mobs_doomed:hedgehog",
+		"hades_doomed:hedgehog",
 		"mobs_bugslive:bug",
 		"mobs_better_rat:rat",
 		"mobs_animal:rat",
@@ -62,9 +62,9 @@ mobs:register_mob("mobs_doomed:badger", {
 	end,
 })
 
-mobs:register_egg("mobs_doomed:badger", "Badger", "default_obsidian.png", 1)
+mobs:register_egg("hades_doomed:badger", "Badger", "default_obsidian.png", 1)
 
-mobs:spawn_specific("mobs_doomed:badger",
+mobs:spawn_specific("hades_doomed:badger",
 				    {
 						"default:dirt_with_grass",
 						"default:dirt",

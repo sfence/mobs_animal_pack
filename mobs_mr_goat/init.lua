@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_mr_goat:goat", {
+mobs:register_mob("hades_mr_goat:goat", {
 	type = "animal",
 	visual = "mesh",
 	visual_size = {x=2,y=2},
@@ -68,12 +68,12 @@ mobs:register_mob("mobs_mr_goat:goat", {
 			end
 			local inv = clicker:get_inventory()
 			inv:remove_item("main", "bucket:bucket_empty")
-			if inv:room_for_item("main", {name = "mobs_mr_goat:bucket_goatmilk"}) then
-				clicker:get_inventory():add_item("main", "mobs_mr_goat:bucket_goatmilk")
+			if inv:room_for_item("main", {name = "hades_mr_goat:bucket_goatmilk"}) then
+				clicker:get_inventory():add_item("main", "hades_mr_goat:bucket_goatmilk")
 			else
 				local pos = self.object:getpos()
 				pos.y = pos.y + 0.5
-				minetest.add_item(pos, {name = "mobs_mr_goat:bucket_goatmilk"})
+				minetest.add_item(pos, {name = "hades_mr_goat:bucket_goatmilk"})
 			end
 			self.gotten = true -- milked
 			return
@@ -88,7 +88,7 @@ else
 	l_spawn_elevation_min = 1
 end
 mobs:spawn({
-	name = "mobs_mr_goat:goat",
+	name = "hades_mr_goat:goat",
 	nodes = {"default:dirt_with_grass", "ethereal:green_dirt_top"},
 	min_light = 10,
 	chance = 300000,
@@ -96,10 +96,10 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
-mobs:register_egg("mobs_mr_goat:goat", "Goat", "default_grass.png", 1)
+mobs:register_egg("hades_mr_goat:goat", "Goat", "default_grass.png", 1)
 
 -- bucket of goat milk
-minetest.register_craftitem("mobs_mr_goat:bucket_goatmilk", {
+minetest.register_craftitem("hades_mr_goat:bucket_goatmilk", {
 	description = "Bucket of Goat Milk",
 	inventory_image = "mobs_bucket_milk.png",
 	stack_max = 1,
@@ -107,38 +107,38 @@ minetest.register_craftitem("mobs_mr_goat:bucket_goatmilk", {
 })
 
 -- cheese wedge
-minetest.register_craftitem("mobs_mr_goat:goatcheese", {
+minetest.register_craftitem("hades_mr_goat:goatcheese", {
 	description = "Goat Cheese",
 	inventory_image = "mobs_cheese.png",
 	on_use = minetest.item_eat(6)
 })
 minetest.register_craft({
 	type = "cooking",
-	output = "mobs_mr_goat:goatcheese",
-	recipe = "mobs_mr_goat:bucket_goatmilk",
+	output = "hades_mr_goat:goatcheese",
+	recipe = "hades_mr_goat:bucket_goatmilk",
 	cooktime = 8,
-	replacements = {{ "mobs_mr_goat:bucket_goatmilk", "bucket:bucket_empty"}}
+	replacements = {{ "hades_mr_goat:bucket_goatmilk", "bucket:bucket_empty"}}
 })
 
 -- cheese block
-minetest.register_node("mobs_mr_goat:goatcheeseblock", {
+minetest.register_node("hades_mr_goat:goatcheeseblock", {
 	description = "Goat Cheese Block",
 	tiles = {"mobs_cheeseblock.png"},
 	is_ground_content = false,
 	groups = {crumbly = 3},
-	sounds = default.node_sound_dirt_defaults()
+	sounds = hades_sounds.node_sound_dirt_defaults()
 })
 minetest.register_craft({
-	output = "mobs_mr_goat:goatcheeseblock",
+	output = "hades_mr_goat:goatcheeseblock",
 	recipe = {
-		{'mobs_mr_goat:goatcheese', 'mobs_mr_goat:goatcheese', 'mobs_mr_goat:goatcheese'},
-		{'mobs_mr_goat:goatcheese', 'mobs_mr_goat:goatcheese', 'mobs_mr_goat:goatcheese'},
-		{'mobs_mr_goat:goatcheese', 'mobs_mr_goat:goatcheese', 'mobs_mr_goat:goatcheese'}
+		{'hades_mr_goat:goatcheese', 'hades_mr_goat:goatcheese', 'hades_mr_goat:goatcheese'},
+		{'hades_mr_goat:goatcheese', 'hades_mr_goat:goatcheese', 'hades_mr_goat:goatcheese'},
+		{'hades_mr_goat:goatcheese', 'hades_mr_goat:goatcheese', 'hades_mr_goat:goatcheese'}
 	}
 })
 minetest.register_craft({
-	output = "mobs_mr_goat:goatcheese 9",
+	output = "hades_mr_goat:goatcheese 9",
 	recipe = {
-		{'mobs_mr_goat:goatcheeseblock'}
+		{'hades_mr_goat:goatcheeseblock'}
 	}
 })

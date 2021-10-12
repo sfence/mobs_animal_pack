@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_deer:deer", {
+mobs:register_mob("hades_deer:deer", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_deer2.x",
@@ -68,7 +68,7 @@ else
 	l_spawn_elevation_min = 1
 end
 mobs:spawn({
-	name = "mobs_deer:deer",
+	name = "hades_deer:deer",
 	nodes = {
 		"default:dirt_with_grass",
 		"default:dirt_with_coniferous_litter",
@@ -80,4 +80,4 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
-mobs:register_egg("mobs_deer:deer", "Deer", "wool_violet.png", 1)
+mobs:register_egg("hades_deer:deer", "Deer", "wool_violet.png", 1)

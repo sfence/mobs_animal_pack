@@ -1,4 +1,4 @@
-mobs:register_mob("mobs_doomed:elephant", {
+mobs:register_mob("hades_doomed:elephant", {
 	type = "animal",
 	passive = false,
 	reach = 1,
@@ -56,9 +56,9 @@ mobs:register_mob("mobs_doomed:elephant", {
 	end,
 })
 
-mobs:register_egg("mobs_doomed:elephant", "Elephant", "default_dry_grass.png", 1)
+mobs:register_egg("hades_doomed:elephant", "Elephant", "default_dry_grass.png", 1)
 
-mobs:spawn_specific("mobs_doomed:elephant",
+mobs:spawn_specific("hades_doomed:elephant",
 					{
 						"default:dirt_with_dry_grass",
 						"default:desert_sand"

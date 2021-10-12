@@ -1,6 +1,6 @@
 if not mobs.mod == "redo" then return end
 
-mobs:register_mob("mobs_walrus:walrus", {
+mobs:register_mob("hades_walrus:walrus", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
@@ -55,10 +55,10 @@ mobs:register_mob("mobs_walrus:walrus", {
 		punch_start = 100,		punch_end = 145, -- attack
 	},
 	follow = {
-		"mobs_fish:clownfish",
-		"mobs_fish:tropical",
-		"mobs_animal:penguin",
-		"mobs_animal:penguin_set",
+		"hades_fish:clownfish",
+		"hades_fish:tropical",
+		"hades_animal:penguin",
+		"hades_animal:penguin_set",
 	},
 	view_range = 7,
 	replace_rate = 50,
@@ -68,7 +68,7 @@ mobs:register_mob("mobs_walrus:walrus", {
 	fly_in = "default:water_source",
 })
 
-mobs:register_spawn("mobs_walrus:walrus", {"default:dirt_with_snow", "default:snowblock", "default:ice"}, 20, 0, 300000, 1, 5000)
-mobs:register_egg("mobs_walrus:walrus", "Walrus", "default_grass.png", 1)
+mobs:register_spawn("hades_walrus:walrus", {"default:dirt_with_snow", "default:snowblock", "default:ice"}, 20, 0, 300000, 1, 5000)
+mobs:register_egg("hades_walrus:walrus", "Walrus", "default_grass.png", 1)
 
-minetest.register_alias_force("arctic_life:walrus", "mobs_walrus:walrus")
+minetest.register_alias_force("arctic_life:walrus", "hades_walrus:walrus")

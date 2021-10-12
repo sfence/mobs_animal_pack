@@ -33,7 +33,7 @@ local l_spawn_chance_gull	= 240000
 local l_spawn_chance_bird	= 360000
 
 -- gulls
-mobs:register_mob("mobs_birds:gull", {
+mobs:register_mob("hades_birds:gull", {
 	type = "animal",
 	passive = true,
 	hp_min = 5,
@@ -55,7 +55,7 @@ mobs:register_mob("mobs_birds:gull", {
 	view_range = 14,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "mobs_birds:gull")
+		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "hades_birds:gull")
 	end,
 	drops = {
 		{name="mobs:meat_raw", chance=1, min=0, max=2},
@@ -63,11 +63,11 @@ mobs:register_mob("mobs_birds:gull", {
 	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_birds:gull", l_spawn_in, l_spawn_near_gull, 5, 20, 30, l_spawn_chance_gull, 1, 0, 5000)
-mobs:register_egg("mobs_birds:gull", "Gull", l_egg_texture, 1)
+mobs:spawn_specific("hades_birds:gull", l_spawn_in, l_spawn_near_gull, 5, 20, 30, l_spawn_chance_gull, 1, 0, 5000)
+mobs:register_egg("hades_birds:gull", "Gull", l_egg_texture, 1)
 
 -- large birds
-mobs:register_mob("mobs_birds:bird_lg", {
+mobs:register_mob("hades_birds:bird_lg", {
 	type = "animal",
 	passive = true,
 	hp_min = 5,
@@ -90,7 +90,7 @@ mobs:register_mob("mobs_birds:bird_lg", {
 	view_range = 12,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "mobs_birds:bird_lg")
+		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "hades_birds:bird_lg")
 	end,
 	drops = {
 		{name="mobs:meat_raw", chance=1, min=0, max=2},
@@ -98,11 +98,11 @@ mobs:register_mob("mobs_birds:bird_lg", {
 	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_birds:bird_lg", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
-mobs:register_egg("mobs_birds:bird_lg", "Large bird", l_egg_texture, 1)
+mobs:spawn_specific("hades_birds:bird_lg", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
+mobs:register_egg("hades_birds:bird_lg", "Large bird", l_egg_texture, 1)
 
 -- small birds
-mobs:register_mob("mobs_birds:bird_sm", {
+mobs:register_mob("hades_birds:bird_sm", {
 	type = "animal",
 	passive = true,
 	hp_min = 2,
@@ -125,7 +125,7 @@ mobs:register_mob("mobs_birds:bird_sm", {
 	view_range = 10,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
-		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "mobs_birds:bird_sm")
+		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "hades_birds:bird_sm")
 	end,
 	drops = {
 		{name="mobs:meat_raw", chance=1, min=0, max=1},
@@ -133,5 +133,5 @@ mobs:register_mob("mobs_birds:bird_sm", {
 	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_birds:bird_sm", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
-mobs:register_egg("mobs_birds:bird_sm", "Small bird", l_egg_texture, 1)
+mobs:spawn_specific("hades_birds:bird_sm", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
+mobs:register_egg("hades_birds:bird_sm", "Small bird", l_egg_texture, 1)
