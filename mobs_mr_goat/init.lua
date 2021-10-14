@@ -81,6 +81,7 @@ mobs:register_mob("hades_mr_goat:goat", {
 	end
 })
 
+--[[
 local l_spawn_elevation_min = minetest.setting_get("water_level")
 if l_spawn_elevation_min then
 	l_spawn_elevation_min = l_spawn_elevation_min + 1
@@ -96,6 +97,7 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
+--]]
 mobs:register_egg("hades_mr_goat:goat", "Goat", "default_grass.png", 1)
 
 -- bucket of goat milk

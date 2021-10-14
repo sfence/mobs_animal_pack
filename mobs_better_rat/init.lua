@@ -61,9 +61,11 @@ mobs:register_mob("hades_better_rat:rat", {
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
+--[[
 mobs:spawn_specific("hades_better_rat:rat",
 	{"default:stone"},
 	{"air"},
 	0, 14, 30, 300000, 2, -25000, 5000
 )
+--]]
 mobs:register_egg("hades_better_rat:rat", "Mouse", "wool_brown.png", 1)

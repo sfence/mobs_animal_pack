@@ -42,5 +42,5 @@ mobs:register_mob("hades_butterfly:butterfly", {
 	end
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("hades_butterfly:butterfly", {"air"}, l_spawnnear, 5, 20, 30, l_spawnchance, 1, 0, 5000)
+--mobs:spawn_specific("hades_butterfly:butterfly", {"air"}, l_spawnnear, 5, 20, 30, l_spawnchance, 1, 0, 5000)
 mobs:register_egg("hades_butterfly:butterfly", "Butterfly", "default_cloud.png", 1)

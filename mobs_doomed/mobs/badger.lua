@@ -64,6 +64,7 @@ mobs:register_mob("hades_doomed:badger", {
 
 mobs:register_egg("hades_doomed:badger", "Badger", "default_obsidian.png", 1)
 
+--[[
 mobs:spawn_specific("hades_doomed:badger",
 				    {
 						"default:dirt_with_grass",
@@ -72,3 +73,4 @@ mobs:spawn_specific("hades_doomed:badger",
 					},
 				    {"air"},
                     0, 14, 30, 300000, 2, 0, 5000)
+--]]

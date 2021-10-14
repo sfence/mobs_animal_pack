@@ -133,5 +133,5 @@ mobs:register_mob("hades_birds:bird_sm", {
 	},
 })
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("hades_birds:bird_sm", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
+--mobs:spawn_specific("hades_birds:bird_sm", l_spawn_in, l_spawn_near_bird, 5, 20, 30, l_spawn_chance_bird, 1, 0, 5000)
 mobs:register_egg("hades_birds:bird_sm", "Small bird", l_egg_texture, 1)

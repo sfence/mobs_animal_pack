@@ -64,6 +64,7 @@ mobs:register_mob("hades_bugslive:bug", {
 })
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
+--[[
 mobs:spawn_specific("hades_bugslive:bug",
 	{
 		"default:dirt",
@@ -77,4 +78,5 @@ mobs:spawn_specific("hades_bugslive:bug",
 	{"air", "default:water_source", "default:water_flowing", "default:river_water_source", "default:river_water_flowing"},
 	0, 15, 30, 300000, 2, -25000, 5000
 )
+--]]
 mobs:register_egg("hades_bugslive:bug", "Bug", "inv_bug.png", 0)

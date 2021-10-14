@@ -96,10 +96,12 @@ mobs:register_mob("hades_turtles:turtle", {
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
+--[[
 mobs:spawn_specific("hades_turtles:turtle",
 	{"default:dirt_with_grass","default:jungle_grass","default:sand","default:desert_sand"},
 	{"default:dirt_with_grass","default:jungle_grass","default:sand","default:desert_sand","default:papyrus","default:cactus","dryplants:juncus","dryplants:reedmace"},
 	5, 20, 30, l_spawn_chance, 1, 1, 5000)
+--]]
 mobs:register_egg("hades_turtles:turtle", "Turtle", "default_grass.png", 1)
 
 -- sea turtle
@@ -141,8 +143,10 @@ mobs:register_mob("hades_turtles:seaturtle", {
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
+--[[
 mobs:spawn_specific("hades_turtles:seaturtle",
 	{"default:water_flowing","default:water_source"},
 	{"default:water_flowing","default:water_source","group:seaplants","seawrecks:woodship","seawrecks:uboot"},
 	5, 20, 30, l_spawn_chance, 1, -50, 0)
+--]]
 mobs:register_egg("hades_turtles:seaturtle", "Sea Turtle", "default_water.png", 1)

@@ -33,8 +33,10 @@ mobs:register_mob("hades_jellyfish:jellyfish", {
 	end
 })
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
+--[[
 mobs:spawn_specific("hades_jellyfish:jellyfish",
 	{"default:water_source"},
 	{"default:water_flowing","default:water_source"},
 	1, 14, 30, 300000, 1, -50, -1)
+--]]
 mobs:register_egg("hades_jellyfish:jellyfish", "Jellyfish", "jellyfish_inv.png", 0)

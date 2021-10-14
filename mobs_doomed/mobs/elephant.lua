@@ -58,6 +58,7 @@ mobs:register_mob("hades_doomed:elephant", {
 
 mobs:register_egg("hades_doomed:elephant", "Elephant", "default_dry_grass.png", 1)
 
+--[[
 mobs:spawn_specific("hades_doomed:elephant",
 					{
 						"default:dirt_with_dry_grass",
@@ -65,3 +66,4 @@ mobs:spawn_specific("hades_doomed:elephant",
 					},
 					{"air"},
                     10, 14, 30, 300000, 2, 0, 5000, true)
+--]]

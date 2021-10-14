@@ -101,6 +101,7 @@ mobs:register_mob("hades_bear:medved", {
 	end
 })
 
+--[[
 local l_spawn_elevation_min = (minetest.setting_get("water_level") or 0) - 10
 mobs:spawn({
 	name = "hades_bear:medved",
@@ -111,4 +112,5 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
+--]]
 mobs:register_egg("hades_bear:medved", "Bear", "wool_brown.png", 1)

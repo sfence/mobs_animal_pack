@@ -61,6 +61,7 @@ mobs:register_mob("hades_deer:deer", {
 	end
 })
 
+--[[
 local l_spawn_elevation_min = minetest.setting_get("water_level")
 if l_spawn_elevation_min then
 	l_spawn_elevation_min = l_spawn_elevation_min + 1
@@ -80,4 +81,5 @@ mobs:spawn({
 	max_height = 5000,
 	day_toggle = true,
 })
+--]]
 mobs:register_egg("hades_deer:deer", "Deer", "wool_violet.png", 1)

@@ -68,7 +68,7 @@ mobs:register_mob("hades_walrus:walrus", {
 	fly_in = "default:water_source",
 })
 
-mobs:register_spawn("hades_walrus:walrus", {"default:dirt_with_snow", "default:snowblock", "default:ice"}, 20, 0, 300000, 1, 5000)
+--mobs:register_spawn("hades_walrus:walrus", {"default:dirt_with_snow", "default:snowblock", "default:ice"}, 20, 0, 300000, 1, 5000)
 mobs:register_egg("hades_walrus:walrus", "Walrus", "default_grass.png", 1)
 
 minetest.register_alias_force("arctic_life:walrus", "hades_walrus:walrus")
