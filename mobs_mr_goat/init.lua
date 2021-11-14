@@ -51,13 +51,14 @@ mobs:register_mob("hades_mr_goat:goat", {
 	},
 
 	replace_what = {
-		{"hades_grass:grass_1","air",0}
-		{"hades_grass:grass_2","hades_grass:grass_1",0}
-		{"hades_grass:grass_3","hades_grass:grass_2",0}
-		{"hades_grass:grass_4","hades_grass:grass_3",0}
-		{"hades_grass:grass_5","hades_grass:grass_4",0}
+		{"group:flower","air",0},
+		{"hades_grass:grass_1","air",0},
+		{"hades_grass:grass_2","hades_grass:grass_1",0},
+		{"hades_grass:grass_3","hades_grass:grass_2",0},
+		{"hades_grass:grass_4","hades_grass:grass_3",0},
+		{"hades_grass:grass_5","hades_grass:grass_4",0},
 		{"hades_core:dirt_with_grass", "hades_core:dirt_with_grass_l3", -1},
-		{"hades_core:dirt_with_grass_l3", "hades_core:dirt_with_grass_l2", -1}
+		{"hades_core:dirt_with_grass_l3", "hades_core:dirt_with_grass_l2", -1},
 		{"hades_core:dirt_with_grass_l2", "hades_core:dirt_with_grass_l1", -1}
 	},
 	replace_rate = 50,
@@ -117,7 +118,7 @@ minetest.register_craftitem("hades_mr_goat:bucket_goatmilk", {
 	description = "Bucket of Goat Milk",
 	inventory_image = "mobs_bucket_milk.png",
 	stack_max = 1,
-	on_use = minetest.item_eat(10, 'hades_bucket:bucket_empty')
+	on_use = minetest.item_eat(10, 'hades_bucket:bucket_empty'),
 	groups = {food_milk = 11, eatable = 10},
 })
 
