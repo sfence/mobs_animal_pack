@@ -44,10 +44,10 @@ mobs:register_mob("hades_doomed:elephant", {
 		run_end = 19,
 	},
 	follow = {
-		"cottages:hay",
-		"cottages:straw_bale",
-		"cottages:straw",
-		"farming:straw",
+		"hades_cottages:hay",
+		"hades_cottages:straw_bale",
+		"hades_cottages:straw",
+		"hades_farming:straw",
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end

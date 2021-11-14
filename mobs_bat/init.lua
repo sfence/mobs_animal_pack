@@ -10,9 +10,12 @@ local l_spawnchance	= 300000
 
 mobs:register_mob("hades_bat:bat", {
 	type = "animal",
+	specific_attack = {"hades_butterfly:butterfly"},
 	damage = 1,
 	reach = 1,
 	attack_type = "dogfight",
+	attack_animals = true,
+	attack_player = false,
 	hp_min = 7,
 	hp_max = 12,
 	armor = 130,
@@ -43,7 +46,13 @@ mobs:register_mob("hades_bat:bat", {
 		run_start = 30,			run_end = 59,
 		punch_start = 60,		punch_end = 89
 	},
+	follow = {
+		"hades_butterfly:butterfly",
+	},
+	view_range = 4,
 	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 4, true, true) then return end
+		if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, 5, 60, 0, true, "hades_bat:bat")
 	end,
 	drops = {

@@ -50,11 +50,19 @@ mobs:register_mob("hades_mr_goat:goat", {
 		{name = "mobs:leather", chance = 1, min = 1, max = 2}
 	},
 
-	replace_what = {"default:grass_3", "default:grass_4", "default:grass_5",},
-	replace_with = "air",
+	replace_what = {
+		{"hades_grass:grass_1","air",0}
+		{"hades_grass:grass_2","hades_grass:grass_1",0}
+		{"hades_grass:grass_3","hades_grass:grass_2",0}
+		{"hades_grass:grass_4","hades_grass:grass_3",0}
+		{"hades_grass:grass_5","hades_grass:grass_4",0}
+		{"hades_core:dirt_with_grass", "hades_core:dirt_with_grass_l3", -1},
+		{"hades_core:dirt_with_grass_l3", "hades_core:dirt_with_grass_l2", -1}
+		{"hades_core:dirt_with_grass_l2", "hades_core:dirt_with_grass_l1", -1}
+	},
 	replace_rate = 50,
 	follow = {
-		"farming:straw"
+		"group:flower"
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end
@@ -62,12 +70,12 @@ mobs:register_mob("hades_mr_goat:goat", {
 		if mobs:capture_mob(self, clicker, 0, 0, 60, false, nil) then return end
 
 		local tool = clicker:get_wielded_item()
-		if tool:get_name() == "bucket:bucket_empty" then
+		if tool:get_name() == "hades_bucket:bucket_empty" then
 			if self.gotten == true or self.child == true then
 				return
 			end
 			local inv = clicker:get_inventory()
-			inv:remove_item("main", "bucket:bucket_empty")
+			inv:remove_item("main", "hades_bucket:bucket_empty")
 			if inv:room_for_item("main", {name = "hades_mr_goat:bucket_goatmilk"}) then
 				clicker:get_inventory():add_item("main", "hades_mr_goat:bucket_goatmilk")
 			else
@@ -100,26 +108,32 @@ mobs:spawn({
 --]]
 mobs:register_egg("hades_mr_goat:goat", "Goat", "default_grass.png", 1)
 
+minetest.override_item("hades_mr_goat:goat", {
+		_tt_help = "Eat flowers.",
+	})
+
 -- bucket of goat milk
 minetest.register_craftitem("hades_mr_goat:bucket_goatmilk", {
 	description = "Bucket of Goat Milk",
 	inventory_image = "mobs_bucket_milk.png",
 	stack_max = 1,
-	on_use = minetest.item_eat(10, 'bucket:bucket_empty')
+	on_use = minetest.item_eat(10, 'hades_bucket:bucket_empty')
+	groups = {food_milk = 11, eatable = 10},
 })
 
 -- cheese wedge
 minetest.register_craftitem("hades_mr_goat:goatcheese", {
 	description = "Goat Cheese",
 	inventory_image = "mobs_cheese.png",
-	on_use = minetest.item_eat(6)
+	on_use = minetest.item_eat(6),
+	groups = {food_cheese = 1, eatable = 6},
 })
 minetest.register_craft({
 	type = "cooking",
 	output = "hades_mr_goat:goatcheese",
 	recipe = "hades_mr_goat:bucket_goatmilk",
 	cooktime = 8,
-	replacements = {{ "hades_mr_goat:bucket_goatmilk", "bucket:bucket_empty"}}
+	replacements = {{ "hades_mr_goat:bucket_goatmilk", "hades_bucket:bucket_empty"}}
 })
 
 -- cheese block

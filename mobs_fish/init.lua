@@ -45,14 +45,19 @@ mobs:register_mob("hades_fish:clownfish", {
 	makes_footstep_sound = false,
 	stepheight = 0.1,
 	fly = true,
-	fly_in = "default:water_source",
+	fly_in = "hades_core:water_source",
 	fall_speed = 0,
 	view_range = 8,
 	water_damage = 0,
 	lava_damage = 5,
 	light_damage = 0,
 	animation = l_anims,
+	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
+		"hades_xocean:sand_with_kelp", 
+	},
 	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 4, true, true) then return end
+		if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "hades_fish:clownfish")
 	end
 })
@@ -77,14 +82,19 @@ mobs:register_mob("hades_fish:tropical", {
 	makes_footstep_sound = false,
 	stepheight = 0.1,
 	fly = true,
-	fly_in = "default:water_source",
+	fly_in = "hades_core:water_source",
 	fall_speed = 0,
 	view_range = 8,
 	water_damage = 0,
 	lava_damage = 5,
 	light_damage = 0,
 	animation = l_anims,
+	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
+		"hades_xocean:sand_with_kelp", 
+	},
 	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 4, true, true) then return end
+		if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, l_cc_hand, l_cc_net, 0, true, "hades_fish:tropical")
 	end
 })

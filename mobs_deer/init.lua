@@ -44,15 +44,15 @@ mobs:register_mob("hades_deer:deer", {
 		"group:grass",
 		"group:plant",
 		"group:flora",
-		"default:apple",
+		"hades_trees:apple",
 	},
 	replace_with = "air",
 	replace_rate = 20,
 	follow = {
 		"group:flora",
 		"group:grass",
-		"farming:wheat",
-		"default:apple",
+		"hades_farming:wheat",
+		"hades_trees:apple",
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then return end

@@ -43,18 +43,18 @@ mobs:register_mob("hades_giraffe:jeraf", {
 		{name = "mobs:leather", chance = 1, min = 1, max = 4}
 	},
 	replace_what = {
-		"default:acacia_leaves",
-		"default:acacia_sapling",
-		"default:acacia_bush_leaves",
-		"default:acacia_bush_sapling"
+		"hades_trees:acacia_leaves",
+		"hades_trees:acacia_sapling",
+		"hades_trees:acacia_bush_leaves",
+		"hades_trees:acacia_bush_sapling"
 	},
 	replace_with = "air",
 	replace_rate = 20,
 	follow = {
-		"default:acacia_leaves",
-		"default:acacia_sapling",
-		"default:acacia_bush_leaves",
-		"default:acacia_bush_sapling"
+		"hades_trees:acacia_leaves",
+		"hades_trees:acacia_sapling",
+		"hades_trees:acacia_bush_leaves",
+		"hades_trees:acacia_bush_sapling"
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 10, true, true) then return end

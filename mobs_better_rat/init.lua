@@ -40,22 +40,25 @@ mobs:register_mob("hades_better_rat:rat", {
 	replace_what = {
 		"mobs:cheese",
 		"mobs:cheeseblock",
-		"mobs_mr_goat:goatcheese",
-		"mobs_mr_goat:goatcheeseblock",
-		"farming:barley_5",
-		"farming:barley_6",
-		"farming:barley_7",
-		"farming_corn_7.png",
-		"farming_corn_8.png",
-		"farming:wheat_5",
-		"farming:wheat_6",
-		"farming:wheat_7",
-		"farming:wheat_8"
+		"hades_mr_goat:goatcheese",
+		"hades_mr_goat:goatcheeseblock",
+		"hades_extrafarming:barley_5",
+		"hades_extrafarming:barley_6",
+		"hades_extrafarming:barley_7",
+		"hades_extrafarming_corn_7.png",
+		"hades_extrafarming_corn_8.png",
+		"hades_farming:wheat_5",
+		"hades_farming:wheat_6",
+		"hades_farming:wheat_7",
+		"hades_farming:wheat_8"
 	},
 	replace_with = "air",
 	replace_rate = 10,
-	follow = {"mobs:cheese", "mobs_mr_goat:goatcheese"},
+	follow = {"mobs:cheese", "hades_mr_goat:goatcheese"},
 	on_rightclick = function(self, clicker)
+    -- feed or tame
+    if mobs:feed_tame(self, clicker, 4, true, true) then return end
+    if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, 25, 80, 0, true, "hades_better_rat:rat")
 	end
 })

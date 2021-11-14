@@ -36,6 +36,12 @@ local l_spawn_chance_bird	= 360000
 mobs:register_mob("hades_birds:gull", {
 	type = "animal",
 	passive = true,
+	specific_attack = {"hades_fish:clownfish", "hades_fish:tropical",
+		"hades_petz:clown_fish", "hades_petz:tropical_fish", 
+		"hades_xocean:fish", "hades_xocean:fish2", "hades_xocean:fish3", "hades_xocean:fish4"},
+	attack_animals = true,
+	attack_player = false,
+	damage = 1,
 	hp_min = 5,
 	hp_max = 10,
 	armor = 100,
@@ -52,9 +58,15 @@ mobs:register_mob("hades_birds:gull", {
 	water_damage = 0,
 	lava_damage = 10,
 	light_damage = 0,
+	follow = {
+		"hades_fish:clownfish", "hades_fish:tropical",
+		"hades_jellyfish:jellyfish",
+	},
 	view_range = 14,
 	animation = l_anims,
 	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 4, true, true) then return end
+		if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, l_capture_chance_h, l_capture_chance_n, 0, true, "hades_birds:gull")
 	end,
 	drops = {

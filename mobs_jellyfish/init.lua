@@ -22,13 +22,18 @@ mobs:register_mob("hades_jellyfish:jellyfish", {
 	walk_velocity = 0.1,
 	run_velocity = 0.1,
 	fly = true,
-	fly_in = "default:water_source",
+	fly_in = "hades_core:water_source",
 	fall_speed = 0,
 	view_range = 10,
 	water_damage = 0,
 	lava_damage = 5,
 	light_damage = 0,
+	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
+		"hades_xocean:sand_with_kelp", 
+	},
 	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 4, true, true) then return end
+		if mobs:protect(self, clicker) then return end
 		mobs:capture_mob(self, clicker, 80, 100, 0, true, "hades_jellyfish:jellyfish")
 	end
 })
