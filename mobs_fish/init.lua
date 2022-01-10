@@ -54,6 +54,7 @@ mobs:register_mob("hades_fish:clownfish", {
 	animation = l_anims,
 	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
 		"hades_xocean:sand_with_kelp", 
+		"hades_aquaz:purple_alga", "hades_aquaz:orange_alga", "hades_aquaz:red_alga"
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 4, true, true) then return end
@@ -64,6 +65,10 @@ mobs:register_mob("hades_fish:clownfish", {
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
 --mobs:spawn_specific("hades_fish:clownfish", l_spawn_in, l_spawn_near, 5, 20, 30, l_spawn_chance, 1, -50, l_water_level)
 mobs:register_egg("hades_fish:clownfish", "Clownfish", "animal_clownfish_clownfish_item.png", 0)
+
+minetest.override_item("hades_fish:clownfish", {
+		_tt_help = "Eat alga, seaweed. waterlily and kelp.",
+	})
 
 -- Tropical fish
 mobs:register_mob("hades_fish:tropical", {
@@ -91,6 +96,7 @@ mobs:register_mob("hades_fish:tropical", {
 	animation = l_anims,
 	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
 		"hades_xocean:sand_with_kelp", 
+		"hades_aquaz:purple_alga", "hades_aquaz:orange_alga", "hades_aquaz:red_alga"
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 4, true, true) then return end
@@ -101,3 +107,8 @@ mobs:register_mob("hades_fish:tropical", {
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
 --mobs:spawn_specific("hades_fish:tropical", l_spawn_in, l_spawn_near, 5, 20, 30, l_spawn_chance, 1, -50, l_water_level)
 mobs:register_egg("hades_fish:tropical", "Tropical fish", "animal_fish_blue_white_fish_blue_white_item.png", 0)
+
+minetest.override_item("hades_fish:tropical", {
+		_tt_help = "Eat alga, seaweed. waterlily and kelp.",
+	})
+

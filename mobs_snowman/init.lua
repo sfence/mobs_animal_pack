@@ -37,17 +37,22 @@ mobs:register_mob("hades_snowman:snowman", {
 	lava_damage = 7,
 	fall_damage = 5,
 	water_damage = 5,
-	immune_to = {{"default:snow", -1}},
+	immune_to = {{"hades_snow:snow", -1}},
 	blood_texture = "default_snowball.png",
 	makes_footstep_sound = true,
 	drops = {
-		{name = "default:snow", chance = 1, min = 5, max = 15}
+		{name = "hades_snow:snow", chance = 1, min = 50, max = 150}
 	},
 	replace_what = {"air"},
-	replace_with = "default:snow",
+	replace_with = "hades_snowman:snow",
 	replace_rate = 50,
+	follow = {"hades_extrafarming:carrot",
+	},
+	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 8, false, true) then return end
+	end,
 	do_custom = function(self, dtime)
-			if math.random(1000) >= 999 then
+			if math.random(100) >= 99 then
 				local p1 = self.object:getpos()
 				local objs = minetest.get_objects_inside_radius(p1, self.view_range)
 				for i = 1,#objs do
@@ -95,7 +100,7 @@ minetest.register_node("hades_snowman:tophat", {
 		for i = 1,3 do
 			p.y = p.y - 1
 			local name = minetest.get_node(p).name
-			if name ~= "default:snowblock" then
+			if name ~= "hades_snow:snowblock" then
 				return
 			end
 		end
@@ -141,7 +146,7 @@ core.register_entity("hades_snowman:snowball", {
 
 		self.timer = self.timer - dtime
 		if self.timer < 0 then
-			core.add_item(pos, "default:snow")
+			core.add_item(pos, "hades_snow:snow")
 			self.object:remove()
 			return self
 		end
@@ -152,12 +157,20 @@ core.register_entity("hades_snowman:snowball", {
 		local node_above = core.get_node_or_nil(pos_above)
 		local node_above_def = (node_above and minetest.registered_nodes[node_above.name]) or {}
 
-		if node and node.name ~= "" and node.name ~= "default:snow" and node_def.walkable then
+		if node and node.name ~= "" and node_def.walkable then
 			self.object:setvelocity({x=0, y=0, z=0})
 			self.object:setacceleration({x=0, y=0, z=0})
 			pos.y = pos.y + 1
 			if node_above_def.buildable_to and not sb_is_protected_area(pos_above) then
-				minetest.set_node(pos, {name="default:snow"})
+				if node_above.name ~= "hades_snow:snow" then
+					minetest.set_node(pos, {name="hades_snow:snow",param2=3})
+				else
+					node_above.param2 = node_above.param2 + 3
+					if node_above.param2>=64 then
+						node_above.name = "hades_snow:snowblock"
+					end
+					minetest.swap_node(pos, node_above)
+				end
 			end
 			self.object:remove()
 			core.sound_play("default_snow_footstep", {pos=pos, gain=1.0, max_hear_distance=7})
@@ -169,10 +182,11 @@ core.register_entity("hades_snowman:snowball", {
 			for i = 1,#objs do
 				local obj = objs[i]
 				if obj and ((obj:is_player() and obj:get_player_name() ~= self.thrower) or (obj:get_luaentity() and obj:get_luaentity().physical and obj:get_luaentity().name ~= "__builtin:item" )) then
-					obj:punch(self.object, 1.0, {
-						full_punch_interval=1.0,
-						damage_groups = {fleshy=1},
-					}, nil)
+					--obj:punch(self.object, 1.0, {
+					--	full_punch_interval=1.0,
+					--	damage_groups = {fleshy=1},
+					--}, nil)
+          -- some different effect?
 					self.object:remove()
 					core.sound_play("default_snow_footstep", {pos=pos, gain=1.0, max_hear_distance=7})
 					break
@@ -181,4 +195,21 @@ core.register_entity("hades_snowman:snowball", {
 		end
 		return self
 	end
+})
+
+minetest.register_node("hades_snowman:snow", {
+	description = "Snow to be replaced",
+	tiles = {"default_snow.png"},
+	groups = {snappy=2,choppy=2,not_in_creative_inventory=1},
+	paramtype = "light",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+				{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
+		}
+	},
+	on_construct = function (pos)
+		minetest.set_node(pos, {name="hades_snow:snow", param2=16})
+	end,
 })
