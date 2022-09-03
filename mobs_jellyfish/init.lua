@@ -30,6 +30,7 @@ mobs:register_mob("hades_jellyfish:jellyfish", {
 	light_damage = 0,
 	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
 		"hades_xocean:sand_with_kelp", 
+		"hades_aquaz:purple_alga", "hades_aquaz:orange_alga", "hades_aquaz:red_alga", "hades_aquaz:algae_feed",
 	},
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 4, true, true) then return end
