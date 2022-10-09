@@ -29,7 +29,8 @@ mobs:register_mob("hades_jellyfish:jellyfish", {
 	lava_damage = 5,
 	light_damage = 0,
 	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
-		"hades_xocean:sand_with_kelp", 
+		"hades_xocean:sand_with_kelp", "hades_xocean:seagrass",
+    "hades_aquaz:grass", "hades_aquaz:tall_grass",
 		"hades_aquaz:purple_alga", "hades_aquaz:orange_alga", "hades_aquaz:red_alga", "hades_aquaz:algae_feed",
 	},
 	on_rightclick = function(self, clicker)
@@ -46,3 +47,12 @@ mobs:spawn_specific("hades_jellyfish:jellyfish",
 	1, 14, 30, 300000, 1, -50, -1)
 --]]
 mobs:register_egg("hades_jellyfish:jellyfish", "Jellyfish", "jellyfish_inv.png", 0)
+
+if minetest.get_modpath("hades_xocean") then
+  hades_xocean.add_fish("hades_jellyfish:jellyfish")
+end
+
+if minetest.get_modpath("hades_aquaz") then
+  aquaz.add_algae_feed_fishes("hades_jellyfish:jellyfish")
+end
+

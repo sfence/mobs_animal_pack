@@ -52,8 +52,12 @@ mobs:register_mob("hades_fish:clownfish", {
 	lava_damage = 5,
 	light_damage = 0,
 	animation = l_anims,
+	drops = {
+		{name = "hades_xocean:fish_edible", chance = 1, min = 1, max = 1},
+	},
 	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
-		"hades_xocean:sand_with_kelp", 
+		"hades_xocean:sand_with_kelp", "hades_xocean:seagrass",
+		"hades_aquaz:grass", "hades_aquaz:tall_grass",
 		"hades_aquaz:purple_alga", "hades_aquaz:orange_alga", "hades_aquaz:red_alga", "hades_aquaz:algae_feed",
 	},
 	on_rightclick = function(self, clicker)
@@ -94,8 +98,12 @@ mobs:register_mob("hades_fish:tropical", {
 	lava_damage = 5,
 	light_damage = 0,
 	animation = l_anims,
+	drops = {
+		{name = "hades_xocean:fish_edible", chance = 1, min = 1, max = 1},
+	},
 	follow = {"hades_waterplants:seaweed", "hades_waterplants:waterlily",
-		"hades_xocean:sand_with_kelp", 
+		"hades_xocean:sand_with_kelp", "hades_xocean:seagrass",
+		"hades_aquaz:grass", "hades_aquaz:tall_grass",
 		"hades_aquaz:purple_alga", "hades_aquaz:orange_alga", "hades_aquaz:red_alga", "hades_aquaz:algae_feed",
 	},
 	on_rightclick = function(self, clicker)
@@ -111,4 +119,14 @@ mobs:register_egg("hades_fish:tropical", "Tropical fish", "animal_fish_blue_whit
 minetest.override_item("hades_fish:tropical", {
 		_tt_help = "Eat alga, seaweed. waterlily and kelp.",
 	})
+
+if minetest.get_modpath("hades_xocean") then
+	hades_xocean.add_fish("hades_fish:clownfish")
+	hades_xocean.add_fish("hades_fish:tropical")
+end
+
+if minetest.get_modpath("hades_aquaz") then
+	aquaz.add_algae_feed_fishes("hades_fish:clownfish")
+	aquaz.add_algae_feed_fishes("hades_fish:tropical")
+end
 
