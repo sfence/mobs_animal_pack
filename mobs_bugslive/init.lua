@@ -42,10 +42,10 @@ mobs:register_mob("hades_bugslive:bug", {
 	recovery_time = 0.25,
 	blood_amount = 1,
 	replace_what = {
-		"farming:beanpole_5",
-		"farming:cucumber_4",
-		"farming:melon_8",
-		"farming:pumpkin_8"
+		"hades_extrafarming:beanpole_5",
+		"hades_extrafarming:cucumber_4",
+		"hades_extrafarming:melon_8",
+		"hades_extrafarming:pumpkin_8"
 	},
 	replace_with = "air",
 	replace_rate = 10,
