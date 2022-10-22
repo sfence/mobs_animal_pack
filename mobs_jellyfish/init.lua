@@ -52,7 +52,3 @@ if minetest.get_modpath("hades_xocean") then
   hades_xocean.add_fish("hades_jellyfish:jellyfish")
 end
 
-if minetest.get_modpath("hades_aquaz") then
-  aquaz.add_algae_feed_fishes("hades_jellyfish:jellyfish")
-end
-
